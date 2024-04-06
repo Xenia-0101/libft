@@ -4,10 +4,8 @@ int ft_strlen(char *str)
 {
 	int count;
 
-	while (*str)
-	{
+	count = 0;
+	while (*str++)
 		count++;
-		str++;
-	}
 	return (count);
 }
