@@ -20,6 +20,7 @@ FunctionMapping functions[] = {
 	{"ft_memcpy", tests_ft_memcpy},
 	{"ft_memccpy", tests_ft_memccpy},
 	{"ft_strncmp", tests_ft_strncmp},
+	{"ft_memmove", tests_ft_memmove},
 };
 
 // Find a function pointer based on its name

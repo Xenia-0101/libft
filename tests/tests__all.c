@@ -1,14 +1,6 @@
 
 #include "tests.h"
 
-/*
-#include "../ft_isspace.c"
-#include "../ft_memccpy.c" */
-
-
-// run all tests
-
-
 void tests__all(void) {
 	tests_ft_atoi();
 	tests_ft_bzero();
@@ -19,4 +11,5 @@ void tests__all(void) {
 	tests_ft_memcpy();
 	tests_ft_memccpy();
 	tests_ft_strncmp();
+	tests_ft_memmove();
 }
