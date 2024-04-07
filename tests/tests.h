@@ -22,5 +22,6 @@ void tests_ft_strlen(void);
 void tests_ft_memset(void);
 void tests_ft_memcpy(void);
 void tests_ft_memccpy(void);
+void tests_ft_strncmp(void);
 
 #endif

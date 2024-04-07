@@ -18,4 +18,5 @@ void tests__all(void) {
 	tests_ft_memset();
 	tests_ft_memcpy();
 	tests_ft_memccpy();
+	tests_ft_strncmp();
 }

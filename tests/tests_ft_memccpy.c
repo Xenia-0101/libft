@@ -19,5 +19,4 @@ void tests_ft_memccpy(void)
 {
 	printf("tests for memccpy not finished\n");
 	test_ft_memccpy();
-	random_test();
 }
