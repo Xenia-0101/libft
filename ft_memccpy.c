@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void *memccpy(void *dest, const void *src, int c, size_t n)
+void *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	/*
 	DESCRIPTION
@@ -16,17 +16,18 @@ void *memccpy(void *dest, const void *src, int c, size_t n)
 		in the first n characters of src.
 	*/
 	char *temp_d;
-	char *temp_s;
+	const char *temp_s;
 
 	temp_d = (char *)dest;
-	temp_s = (char *)src;
+	temp_s = (const char *)src;
 	while (n > 0)
 	{
 		*temp_d = *temp_s;
-		temp_d++;
-		temp_s++;
 		if (*temp_s == c)
 			return (temp_d++);
+		temp_d++;
+		temp_s++;
+		n--;
 	}
 	return (NULL);
 }

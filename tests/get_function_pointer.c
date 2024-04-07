@@ -12,7 +12,13 @@ typedef struct
 FunctionMapping functions[] = {
 	{"ft_memccpy", tests_ft_memccpy},
 	{"ft_atoi", tests_ft_atoi},
-	{"ft_bzero", tests_ft_bzero}
+	{"ft_bzero", tests_ft_bzero},
+	{"ft_isalpha", tests_ft_isalpha},
+	{"ft_isdigit", tests_ft_isdigit},
+	{"ft_strlen", tests_ft_strlen},
+	{"ft_memset", tests_ft_memset},
+	{"ft_memcpy", tests_ft_memcpy},
+	{"ft_memccpy", tests_ft_memccpy},
 };
 
 // Find a function pointer based on its name

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-rm -f tests_app
+rm -f app
 clear
 
 make all
 
 # run the app with command line argument
-./tests_app $1
+./app $1
