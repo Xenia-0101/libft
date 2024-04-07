@@ -15,13 +15,9 @@ int main(int argc, char *argv[])
 		else
 			printf("Function %s was not found.", argv[1]);
 	}
-	tests_ft_atoi();
-	// tests_ft_bzero();
-	// tests_ft_isalpha();
-	// tests_ft_isdigit();
-	// tests_ft_strlen();
-	// tests_ft_memset();
-	// tests_ft_memcpy();
-	// tests_ft_memccpy();
+	else if (argc == 1)
+	{
+		tests__all();
+	}
 	return (1);
 }

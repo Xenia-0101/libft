@@ -5,4 +5,5 @@ clear
 
 make all
 
-./tests_app ft_bzero
+# run the app with command line argument
+./tests_app $1
