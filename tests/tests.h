@@ -7,7 +7,13 @@
 # include <stddef.h>
 # include <string.h>
 
+// helpers
 void tests__print(const char *test, int passed);
+void (*get_function_pointer(char *name))();
+
+// tests
+void tests__all(void);
+
 void tests_ft_atoi(void);
 void tests_ft_bzero(void);
 void tests_ft_isalpha(void);

@@ -5,4 +5,4 @@ clear
 
 make all
 
-./tests_app
+./tests_app ft_bzero
