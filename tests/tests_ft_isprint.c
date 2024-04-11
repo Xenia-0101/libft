@@ -18,14 +18,14 @@ void test_ft_isprint_1_nonprintables(void)
 	int i;
 	int pass;
 
-	i = 0;
+	i = -1;
 	pass = 1;
-	while(i++ < 32)
-		if (ft_isprint(i) == isprint(i))
+	while(i++ < 31)
+		if (ft_isprint(i) != isprint(i))
 		{
 			pass = 0;
 			tests__print("test_ft_isprint_1_nonprintables", pass);
-			printf("\t%c", i);
+			printf("\t%d\n", i);
 		}
 	if (pass)
 		tests__print("test_ft_isprint_1_nonprintables", pass);
@@ -36,19 +36,20 @@ void test_ft_isprint_2_printables(void)
 	int i;
 	int pass;
 
-	i = 32;
+	i = 31;
 	pass = 1;
 	while(i++ < 32)
 		if (!ft_isprint(i))
 		{
 			pass = 0;
 			tests__print("test_ft_isprint_2_printables", pass);
-			printf("\t%c", i);
+			printf("\t%d\n", i);
 		}
 	if (pass)
 		tests__print("test_ft_isprint_2_printables", pass);
-		
+
 }
+
 
 void tests_ft_isprint(void)
 {
