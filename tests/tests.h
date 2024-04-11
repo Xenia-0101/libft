@@ -15,18 +15,19 @@ void (*get_function_pointer(char *name))();
 // tests
 void tests__all(void);
 
-void tests_ft_atoi(void);
-void tests_ft_bzero(void);
-void tests_ft_isalnum(void);
-void tests_ft_isalpha(void);
-void tests_ft_isascii(void);
-void tests_ft_isdigit(void);
-void tests_ft_strlen(void);
-void tests_ft_memset(void);
-void tests_ft_memcpy(void);
-void tests_ft_memccpy(void);
-void tests_ft_strncmp(void);
-void tests_ft_memmove(void);
-void tests_ft_isprint(void);
+void	tests_ft_atoi(void);
+void	tests_ft_bzero(void);
+void	tests_ft_isalnum(void);
+void	tests_ft_isalpha(void);
+void	tests_ft_isascii(void);
+void	tests_ft_isdigit(void);
+void	tests_ft_strlen(void);
+void	tests_ft_memset(void);
+void	tests_ft_memcpy(void);
+void	tests_ft_memccpy(void);
+void	tests_ft_strncmp(void);
+void	tests_ft_memmove(void);
+void	tests_ft_isprint(void);
+void	tests_ft_toupper(void);
 
 #endif

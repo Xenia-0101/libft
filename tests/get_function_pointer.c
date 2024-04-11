@@ -24,6 +24,7 @@ FunctionMapping functions[] = {
 	{"ft_isalnum", tests_ft_isalnum},
 	{"ft_isascii", tests_ft_isascii},
 	{"ft_isprint", tests_ft_isprint},
+	{"ft_toupper", tests_ft_toupper},
 };
 
 // Find a function pointer based on its name
