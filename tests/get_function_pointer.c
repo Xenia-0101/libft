@@ -23,6 +23,7 @@ FunctionMapping functions[] = {
 	{"ft_memmove", tests_ft_memmove},
 	{"ft_isalnum", tests_ft_isalnum},
 	{"ft_isascii", tests_ft_isascii},
+	{"ft_isprint", tests_ft_isprint},
 };
 
 // Find a function pointer based on its name

@@ -27,5 +27,6 @@ void tests_ft_memcpy(void);
 void tests_ft_memccpy(void);
 void tests_ft_strncmp(void);
 void tests_ft_memmove(void);
+void tests_ft_isprint(void);
 
 #endif
