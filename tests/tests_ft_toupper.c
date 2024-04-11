@@ -22,7 +22,7 @@ void	test_ft_toupper(void)
 	pass = 1;
 	while (i++ < 127)
 	{
-		if (ft_toupper(i) == toupper(i))
+		if (ft_toupper(i) != toupper(i))
 		{
 			pass = 0;
 			tests__print("test_ft_toupper", pass);
