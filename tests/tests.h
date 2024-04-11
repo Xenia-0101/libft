@@ -6,6 +6,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <string.h>
+# include <ctype.h>
 
 // helpers
 void tests__print(const char *test, int passed);
@@ -18,6 +19,7 @@ void tests_ft_atoi(void);
 void tests_ft_bzero(void);
 void tests_ft_isalnum(void);
 void tests_ft_isalpha(void);
+void tests_ft_isascii(void);
 void tests_ft_isdigit(void);
 void tests_ft_strlen(void);
 void tests_ft_memset(void);
