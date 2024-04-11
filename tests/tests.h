@@ -16,6 +16,7 @@ void tests__all(void);
 
 void tests_ft_atoi(void);
 void tests_ft_bzero(void);
+void tests_ft_isalnum(void);
 void tests_ft_isalpha(void);
 void tests_ft_isdigit(void);
 void tests_ft_strlen(void);
