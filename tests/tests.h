@@ -30,5 +30,9 @@ void	tests_ft_memmove(void);
 void	tests_ft_isprint(void);
 void	tests_ft_toupper(void);
 void	tests_ft_tolower(void);
+void	tests_ft_strcpy(void);
+void	tests_ft_strncpy(void);
+void	tests_ft_strlcpy(void);
+
 
 #endif
