@@ -24,10 +24,16 @@ RETURN VALUE
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (*s && n++ > 0)
+	const unsigned char *src;
+
+	if (n != 0)
 	{
-		if (*s == c)
-			return (s);
+		src = (const unsigned char *)s;
+		while (n-- != 0)
+		{
+			if (*src++ == c)
+				return ((void *)(src - 1));
+		}
 	}
 	return (NULL);
 }
