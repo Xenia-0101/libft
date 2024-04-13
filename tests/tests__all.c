@@ -22,4 +22,5 @@ void tests__all(void) {
 	tests_ft_strlcat();
 	tests_ft_strchr();
 	tests_ft_strrchr();
+	tests_ft_memchr();
 }

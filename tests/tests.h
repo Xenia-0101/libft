@@ -36,5 +36,6 @@ void	tests_ft_strlcpy(void);
 void	tests_ft_strlcat(void);
 void	tests_ft_strchr(void);
 void	tests_ft_strrchr(void);
+void	tests_ft_memchr(void);
 
 #endif
