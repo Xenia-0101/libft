@@ -35,5 +35,6 @@ void	tests_ft_strncpy(void);
 void	tests_ft_strlcpy(void);
 void	tests_ft_strlcat(void);
 void	tests_ft_strchr(void);
+void	tests_ft_strrchr(void);
 
 #endif
