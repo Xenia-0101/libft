@@ -33,6 +33,7 @@ FunctionMapping functions[] = {
 	{"ft_strchr", tests_ft_strchr},
 	{"ft_strrchr", tests_ft_strrchr},
 	{"ft_memchr", tests_ft_memchr},
+	{"ft_memcmp", tests_ft_memcmp},
 
 };
 
