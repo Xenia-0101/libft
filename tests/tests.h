@@ -9,11 +9,11 @@
 # include <ctype.h>
 
 // helpers
-void tests__print(const char *test, int passed);
-void (*get_function_pointer(char *name))();
+void	tests__print(const char *test, int passed);
+void	(*get_function_pointer(char *name))();
 
 // tests
-void tests__all(void);
+void	tests__all(void);
 
 void	tests_ft_atoi(void);
 void	tests_ft_bzero(void);
@@ -34,6 +34,6 @@ void	tests_ft_strcpy(void);
 void	tests_ft_strncpy(void);
 void	tests_ft_strlcpy(void);
 void	tests_ft_strlcat(void);
-
+void	tests_ft_strchr(void);
 
 #endif

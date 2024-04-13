@@ -30,6 +30,7 @@ FunctionMapping functions[] = {
 	{"ft_strncpy", tests_ft_strncpy},
 	{"ft_strlcpy", tests_ft_strlcpy},
 	{"ft_strlcat", tests_ft_strlcat},
+	{"ft_strchr", tests_ft_strchr},
 
 };
 

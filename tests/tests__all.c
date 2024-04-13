@@ -20,5 +20,5 @@ void tests__all(void) {
 	tests_ft_strcpy();
 	tests_ft_strncpy();
 	tests_ft_strlcat();
-
+	tests_ft_strchr();
 }
