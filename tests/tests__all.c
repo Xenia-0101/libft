@@ -19,5 +19,6 @@ void tests__all(void) {
 	tests_ft_tolower();
 	tests_ft_strcpy();
 	tests_ft_strncpy();
+	tests_ft_strlcat();
 
 }

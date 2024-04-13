@@ -33,6 +33,7 @@ void	tests_ft_tolower(void);
 void	tests_ft_strcpy(void);
 void	tests_ft_strncpy(void);
 void	tests_ft_strlcpy(void);
+void	tests_ft_strlcat(void);
 
 
 #endif
