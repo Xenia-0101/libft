@@ -25,7 +25,7 @@ RETURN VALUE
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char *t_s;
+	const char	*t_s;
 
 	t_s = NULL;
 	if (c == '\0')

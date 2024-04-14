@@ -1,7 +1,6 @@
 
 #include "tests.h"
 
-#include "../ft_isspace.c"
 
 int main(int argc, char *argv[])
 {

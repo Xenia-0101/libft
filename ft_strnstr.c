@@ -18,10 +18,11 @@
 	ters are searched.  Characters that appear after a `\0' character  are
 	not  searched.
 */
+
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
-	const char *b;
-	const char *l;
+	const char	*b;
+	const char	*l;
 
 	if (!*little)
 		return ((char *)big);

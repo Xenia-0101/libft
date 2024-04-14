@@ -1,9 +1,17 @@
 #include "libft.h"
 
+static int ft_isspace(int c)
+{
+	if ((c == '\f') | (c == '\n') | (c == '\r') | (c == '\t') | (c == '\v') | (c == ' '))
+		return (1);
+	return (0);
+}
+
+
 int	ft_atoi(const char *nptr)
 {
-	int res;
-	int sign;
+	int	res;
+	int	sign;
 
 	res = 0;
 	sign = 1;
