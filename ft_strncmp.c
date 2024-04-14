@@ -18,6 +18,5 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	s1++;
 	s2++;
 	}
-		printf("Inside strncmp\t%c.\t%c.\n", *s1, *s2);
 	return (*s1 - *s2);
 }

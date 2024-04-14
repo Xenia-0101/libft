@@ -38,5 +38,8 @@ void	tests_ft_strchr(void);
 void	tests_ft_strrchr(void);
 void	tests_ft_memchr(void);
 void	tests_ft_memcmp(void);
+void	tests_ft_strnstr(void);
+void	tests_ft_strcmp(void);
+
 
 #endif
