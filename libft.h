@@ -32,6 +32,8 @@ int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t elc, size_t els);
 char	*ft_strdup(const char *s);
 
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t n);

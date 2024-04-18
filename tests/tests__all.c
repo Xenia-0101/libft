@@ -25,4 +25,5 @@ void tests__all(void) {
 	tests_ft_memchr();
 	tests_ft_memcmp();
 	tests_ft_strnstr();
+	tests_ft_strdup();
 }
