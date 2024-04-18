@@ -37,6 +37,7 @@ FunctionMapping functions[] = {
 	{"ft_strnstr", tests_ft_strnstr},
 	{"ft_strcmp", tests_ft_strcmp},
 	{"ft_strdup", tests_ft_strdup},
+	{"ft_strjoin", tests_ft_strjoin},
 };
 
 // Find a function pointer based on its name

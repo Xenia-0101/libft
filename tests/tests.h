@@ -41,6 +41,7 @@ void	tests_ft_memcmp(void);
 void	tests_ft_strnstr(void);
 void	tests_ft_strcmp(void);
 void	tests_ft_strdup(void);
+void	tests_ft_strjoin(void);
 
 
 #endif
