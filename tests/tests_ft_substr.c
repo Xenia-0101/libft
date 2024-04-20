@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "tests.h"
-#include "../ft_substr_bonus.c"
+#include "../ft_substr.c"
 
 static int	ft_strcmp(const char *s1, const char *s2)
 {

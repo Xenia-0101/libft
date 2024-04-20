@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "tests.h"
-#include "../ft_strjoin_bonus.c"
+#include "../ft_strjoin.c"
 
 static int	fft_strcmp(const char *s1, const char *s2)
 {

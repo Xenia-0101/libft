@@ -31,7 +31,7 @@ Description
 #include <stdio.h>
 #include <stdlib.h>
 
-static int char_in_set(char a, char *set)
+static int	char_in_set(char a, const char *set)
 {
 	while (*set)
 	{
@@ -59,7 +59,7 @@ static void	ft_bzero(void *s, size_t n)
 		*temp++ = '\0';
 }
 
-static void *ft_calloc(size_t elc, size_t els)
+static void	*ft_calloc(size_t elc, size_t els)
 {
 	void *ptr;
 
@@ -78,11 +78,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	while (char_in_set(s1[start], set))
 		start++;
-	end = ft_strlen(*s1);
-	while (char_in_set(s1[end], set))
+	end = ft_strlen(s1);
+	while (char_in_set(s1[end - 1], set))
 		end--;
 	trim = ft_calloc(end - start + 1, sizeof (char));
 	if (!trim)
