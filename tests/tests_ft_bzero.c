@@ -2,7 +2,7 @@
 #include "tests.h"
 #include "../ft_bzero.c"
 
-int check_string(void *str) {
+static int check_string(void *str) {
 	char *temp;
 	temp = (char *)str;
 

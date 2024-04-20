@@ -1,4 +1,14 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/20 11:24:48 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/20 11:24:48 by xvislock         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 /*
 	DESCRIPTION
@@ -12,6 +22,10 @@
 		The memmove() function returns a pointer to dest.
 */
 
+#include <stdio.h>
+
+static void	*ft_memcpy(void *dest, const void *src, size_t n);
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char temp[50];
@@ -19,3 +33,18 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	ft_memcpy(dest, temp, n);
 	return (dest);
 }
+
+static void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	char *temp_d;
+	char *temp_s;
+
+	temp_d = (char *)dest;
+	temp_s = (char *)src;
+	while (n-- > 0)
+	{
+		*temp_d++ = *temp_s++;
+	}
+	return (dest);
+}
+

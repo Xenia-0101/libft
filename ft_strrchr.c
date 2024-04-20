@@ -21,7 +21,9 @@ RETURN VALUE
 	functions return a pointer to the terminator.
 */
 
-#include "libft.h"
+#include <stdio.h>
+
+static int	fft_strlen(char *str);
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -29,7 +31,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	t_s = NULL;
 	if (c == '\0')
-		return ((char *)s + ft_strlen((char *)s));
+		return ((char *)s + fft_strlen((char *)s));
 	while (*s)
 	{
 		if (*s == c)
@@ -37,5 +39,15 @@ char	*ft_strrchr(const char *s, int c)
 		s++;
 	}
 	return ((char *)t_s);
+}
+
+static int	fft_strlen(char *str)
+{
+	int	count;
+
+	count = 0;
+	while (*str++)
+		count++;
+	return (count);
 }
 

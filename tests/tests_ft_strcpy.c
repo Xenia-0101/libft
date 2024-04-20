@@ -13,6 +13,29 @@
 #include "tests.h"
 #include "../ft_strcpy.c"
 
+static int	fft_strncmp(const char *s1, const char *s2, size_t n)
+{
+
+	while (n-- > 0 && *s1)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+	s1++;
+	s2++;
+	}
+	return (*s1 - *s2);
+}
+
+static int	fft_strlen(char *str)
+{
+	int	count;
+
+	count = 0;
+	while (*str++)
+		count++;
+	return (count);
+}
+
 void	test_ft_strcpy_1_equal(void)
 {
 	const char *src = "FGccjqWCcYr";
@@ -20,7 +43,7 @@ void	test_ft_strcpy_1_equal(void)
 	char *res = ft_strcpy(dest, src);
 
 	int pass = 1;
-	if (ft_strncmp(res, src, ft_strlen((char *)src)))
+	if (fft_strncmp(res, src, fft_strlen((char *)src)))
 		pass = 0;
 	tests__print("test_ft_strcpy_1_equal", pass);
 }
@@ -32,7 +55,7 @@ void	test_ft_strcpy_2_large_dest(void)
 	char *res = ft_strcpy(dest, src);
 
 	int pass = 1;
-	if (ft_strncmp(res, src, ft_strlen((char *)src)))
+	if (fft_strncmp(res, src, fft_strlen((char *)src)))
 		pass = 0;
 	tests__print("test_ft_strcpy_2_large_dest", pass);
 }
@@ -44,7 +67,7 @@ void	test_ft_strcpy_3_large_src(void)
 	char *res = ft_strcpy(dest, src);
 
 	int pass = 1;
-	if (ft_strncmp(res, src, ft_strlen((char *)src)))
+	if (fft_strncmp(res, src, fft_strlen((char *)src)))
 		pass = 0;
 	tests__print("test_ft_strcpy_3_large_src", pass);
 }

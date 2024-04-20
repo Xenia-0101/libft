@@ -13,13 +13,25 @@
 #include "tests.h"
 #include "../ft_memchr.c"
 
+static int	ft_strcmp(const char *s1, const char *s2)
+{
+	while (*s1)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
+}
+
 void test_ft_memchr_1(void)
 {
 	int pass = 1;
 	char *str = "hello there";
 	char c = 't';
 	char *t_str = ft_memchr(str, c, 11);
-	if (strcmp(t_str, memchr(str, c, 11)))
+	if (ft_strcmp(t_str, memchr(str, c, 11)))
 		pass = 0;
 	tests__print("test_ft_memchr_1", pass);
 }
@@ -41,7 +53,7 @@ void test_ft_memchr_3(void)
 	char *str = "hello there!";
 	char c = '!';
 	char *t_str = ft_memchr(str, c, 12);
-	if (strcmp(t_str, memchr(str, c, 12)))
+	if (ft_strcmp(t_str, memchr(str, c, 12)))
 		pass = 0;
 	tests__print("test_ft_memchr_3", pass);
 }
@@ -52,7 +64,7 @@ void test_ft_memchr_4(void)
 	char *str = "*hello there!";
 	char c = '*';
 	char *t_str = ft_memchr(str, c, 13);
-	if (strcmp(t_str, memchr(str, c, 13)))
+	if (ft_strcmp(t_str, memchr(str, c, 13)))
 		pass = 0;
 	tests__print("test_ft_memchr_4", pass);
 }
@@ -63,7 +75,7 @@ void test_ft_memchr_5(void)
 	char *str = "*hello there!";
 	char c = 'l';
 	char *t_str = ft_memchr(str, c, 13);
-	if (strcmp(t_str, memchr(str, c, 13)))
+	if (ft_strcmp(t_str, memchr(str, c, 13)))
 		pass = 0;
 	tests__print("test_ft_memchr_5", pass);
 }

@@ -13,6 +13,18 @@
 #include "tests.h"
 #include "../ft_strnstr.c"
 
+static int	ft_strcmp(const char *s1, const char *s2)
+{
+	while (*s1)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
+}
+
 void test_ft_strnstr_1(void)
 {
 	int pass = 1;

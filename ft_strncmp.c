@@ -1,4 +1,14 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/20 15:43:26 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/20 15:43:26 by xvislock         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 /*
 DESCRIPTION
@@ -9,9 +19,10 @@ RETURN VALUE
 	first n bytes thereof) is found, respectively, to be less than, to match, or be greater than s2.
 */
 
+#include <stdio.h>
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-
 	while (n-- > 0 && *s1)
 	{
 		if (*s1 != *s2)

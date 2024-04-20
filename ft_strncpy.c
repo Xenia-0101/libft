@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /*
 DESCRIPTION
 	The  strNcpy() function copies at most n bytes of src, including the terminating null byte ('\0'), to the
@@ -29,9 +27,10 @@ NOTES
 	that the buffer is not overflowed and that unused bytes in the destination buffer are zeroed out
 */
 
+#include <stdio.h>
+
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-
 	char	*t_dest;
 
 	t_dest = dest;

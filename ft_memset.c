@@ -1,4 +1,14 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/20 11:27:17 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/20 11:27:17 by xvislock         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 /*
 DESCRIPTION
@@ -8,6 +18,8 @@ DESCRIPTION
 RETURN VALUE
 	The memset() function returns a pointer to the memory area s.
 */
+
+#include <stdio.h>
 
 void	*ft_memset(void *str, int c, size_t n)
 {

@@ -13,12 +13,24 @@
 #include "tests.h"
 #include "../ft_strjoin_bonus.c"
 
+static int	fft_strcmp(const char *s1, const char *s2)
+{
+	while (*s1)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
+}
+
 void test_ft_strjoin_1_two_strings(void)
 {
 	int		pass = 1;
 	char	*join = ft_strjoin("hello", " there");
 
-	if (!join || ft_strcmp(join, "hello there"))
+	if (!join || fft_strcmp(join, "hello there"))
 		pass = 0;
 	tests__print("test_ft_strjoin_1_two_strings", pass);
 }
@@ -28,7 +40,7 @@ void test_ft_strjoin_2_first_empty(void)
 	int		pass = 1;
 	char	*join = ft_strjoin("", " there");
 
-	if (!join || ft_strcmp(join, " there"))
+	if (!join || fft_strcmp(join, " there"))
 		pass = 0;
 	tests__print("test_ft_strjoin_2_first_empty", pass);
 }
@@ -38,7 +50,7 @@ void test_ft_strjoin_3_second_empty(void)
 	int		pass = 1;
 	char	*join = ft_strjoin("hello", "");
 
-	if (!join || ft_strcmp(join, "hello"))
+	if (!join || fft_strcmp(join, "hello"))
 		pass = 0;
 	tests__print("test_ft_strjoin_3_second_empty", pass);
 }
@@ -49,7 +61,7 @@ void test_ft_strjoin_4(void)
 	char	*s1 = ft_calloc(0, 0);
 	char	*join = ft_strjoin(s1, "hey");
 
-	if (!join || ft_strcmp(join, "hey"))
+	if (!join || fft_strcmp(join, "hey"))
 		pass = 0;
 	tests__print("test_ft_strjoin_4", pass);
 }

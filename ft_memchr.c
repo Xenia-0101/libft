@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /*
 DESCRIPTION
 	The memchr() function scans the initial n bytes of the memory area pointed to by s for the first instance of
@@ -22,9 +20,11 @@ RETURN VALUE
 	occur in the given memory area.
 */
 
+#include <stdio.h>
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *src;
+	const unsigned char	*src;
 
 	if (n != 0)
 	{

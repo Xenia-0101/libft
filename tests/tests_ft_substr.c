@@ -12,7 +12,18 @@
 
 #include "tests.h"
 #include "../ft_substr_bonus.c"
-#include "../ft_calloc.c"
+
+static int	ft_strcmp(const char *s1, const char *s2)
+{
+	while (*s1)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
+}
 
 void test_ft_strdup_1(void)
 {
@@ -96,7 +107,7 @@ void tests_ft_strdup(void)
 {
 	test_ft_strdup_1();
 	test_ft_strdup_2();
-	test_ft_strdup_3(); 
+	test_ft_strdup_3();
 	test_ft_strdup_4();
 	test_ft_strdup_5();
 	test_ft_strdup_6();

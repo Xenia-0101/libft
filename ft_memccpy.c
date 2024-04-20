@@ -1,4 +1,14 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/20 11:22:33 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/20 11:22:33 by xvislock         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 /*
 DESCRIPTION
@@ -13,6 +23,8 @@ RETURN VALUE
 	character in dest after c, or NULL if c was not found
 	in the first n characters of src.
 */
+
+#include <stdio.h>
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {

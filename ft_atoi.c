@@ -1,12 +1,17 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/20 17:39:28 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/20 17:39:28 by xvislock         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int ft_isspace(int c)
-{
-	if ((c == '\f') | (c == '\n') | (c == '\r') | (c == '\t') | (c == '\v') | (c == ' '))
-		return (1);
-	return (0);
-}
-
+static int	ft_isspace(int c);
+static int	ft_isdigit(int c);
 
 int	ft_atoi(const char *nptr)
 {
@@ -31,4 +36,15 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	return (res * sign);
+}
+
+static int	ft_isspace(int c)
+{
+	return ((c == '\f') | (c == '\n') | (c == '\r') |
+			(c == '\t') | (c == '\v') | (c == ' '));
+}
+
+static int	ft_isdigit(int c)
+{
+	return (c >= '0' && c <= '9');
 }

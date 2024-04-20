@@ -1,7 +1,6 @@
 
 #include "tests.h"
 #include "../ft_memccpy.c"
-#include <ctype.h>
 
 void test_ft_memccpy(void)
 {
