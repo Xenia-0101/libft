@@ -28,4 +28,5 @@ void tests__all(void) {
 	tests_ft_strnstr();
 	tests_ft_tolower();
 	tests_ft_toupper();
+	tests_ft_strtrim();
 }
