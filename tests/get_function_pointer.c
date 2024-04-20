@@ -38,6 +38,7 @@ FunctionMapping functions[] = {
 	{"ft_tolower", tests_ft_tolower},
 	{"ft_toupper", tests_ft_toupper},
 	{"ft_strtrim", tests_ft_strtrim},
+	{"ft_split", tests_ft_split},
 };
 
 // Find a function pointer based on its name

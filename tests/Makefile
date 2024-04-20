@@ -34,6 +34,7 @@ tests_ft_substr.c \
 tests_ft_tolower.c \
 tests_ft_toupper.c \
 tests_ft_strtrim.c \
+tests_ft_split.c \
 
 OBJS = ${SRCS:.c=.o}
 

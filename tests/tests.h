@@ -43,6 +43,7 @@ void	tests_ft_strcmp(void);
 void	tests_ft_strdup(void);
 void	tests_ft_strjoin(void);
 void	tests_ft_strtrim(void);
+void	tests_ft_split(void);
 
 
 #endif
