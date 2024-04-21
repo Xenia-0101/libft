@@ -15,24 +15,11 @@
 
 void tests_ft_split(void)
 {
-	const char *s = "One Two Three Four";
+	const char *s = "aa bbb cccc";
 	char c = ' ';
 	char **res = ft_split(s, c);
 
 	printf("%s", res[0]);
 	printf("%s", res[1]);
-	printf("%s", res[2]);
-	printf("%s\n", res[3]);
-
-	char *t_s = "One Two Three Four";
-	const char *t_c = " ";
-	char **t_res = strtok(t_s, t_c);
-	printf("%s", t_res[0]);
-	// int i = 0;
-
-	// while (res[i])
-	// {
-	// 	printf("%d\t%s\n", i, res[i]);
-	// 	i++;
-	// }
+	printf("%s\n", res[2]);
 }
