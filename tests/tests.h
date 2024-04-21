@@ -44,6 +44,7 @@ void	tests_ft_strdup(void);
 void	tests_ft_strjoin(void);
 void	tests_ft_strtrim(void);
 void	tests_ft_split(void);
+void	tests_ft_itoa(void);
 
 
 #endif

@@ -30,4 +30,5 @@ void tests__all(void) {
 	tests_ft_toupper();
 	tests_ft_strtrim();
 	tests_ft_split();
+	tests_ft_itoa();
 }

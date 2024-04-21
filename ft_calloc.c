@@ -25,8 +25,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static void	ft_bzero(void *s, size_t n);
-
 void *ft_calloc(size_t elc, size_t els)
 {
 	void	*ptr;

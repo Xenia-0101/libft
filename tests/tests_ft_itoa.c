@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests_ft_split.c                                   :+:      :+:    :+:   */
+/*   tests_ft_itoa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 21:24:57 by xvislock          #+#    #+#             */
-/*   Updated: 2024/04/20 21:24:57 by xvislock         ###   ########.fr       */
+/*   Created: 2024/04/21 13:27:32 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/21 13:27:32 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
-#include "../ft_split.c"
+#include "../ft_itoa.c"
 
-
-void tests_ft_split(void)
+void	tests_ft_itoa(void)
 {
-	const char *s = "aa bbb cccc";
-	char c = ' ';
-	char **res = ft_split(s, c);
-
-	printf("%s", res[0]);
-	printf("%s", res[1]);
-	printf("%s\n", res[2]);
-
-/* 	const char *s = "aa bbb cccc";
-	char c = 'x';
-	char **res = ft_split(s, c);
-
-	printf("%s\n", res[0]); */
-
-	// const char *s = " ";
-	// char c = 'x';
-	// char **res = ft_split(s, c);
-
-	// printf("%s\n", res[0]);
+	printf("285:\t%s\n", ft_itoa(285));
+	printf("-285:\t%s\n", ft_itoa(-285));
+	printf("0:\t%s\n", ft_itoa(0));
+	printf("-2147483648:\t%s\n", ft_itoa(-2147483648));
 }
