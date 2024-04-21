@@ -29,21 +29,18 @@ static void	ft_bzero(void *s, size_t n);
 
 void *ft_calloc(size_t elc, size_t els)
 {
-	void *ptr;
+	void	*ptr;
+	char	*t_ptr;
+	int		c;
 
 	if (elc == 0 || els == 0)
 		elc = els = 1;
-	ptr = malloc(elc * els);
-	if (ptr)
-		ft_bzero(ptr, elc * els);
+	c = elc * els;
+	ptr = malloc(c);
+	if (!ptr)
+		return (NULL);
+	t_ptr = ptr;
+	while (c-- != 0)
+		t_ptr[c] = '\0';
 	return (ptr);
-}
-
-static void	ft_bzero(void *s, size_t n)
-{
-	char *temp;
-
-	temp = (char *)s;
-	while (n-- > 0)
-		*temp++ = '\0';
 }
