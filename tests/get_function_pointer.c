@@ -41,6 +41,7 @@ FunctionMapping functions[] = {
 	{"ft_split", tests_ft_split},
 	{"ft_itoa", tests_ft_itoa},
 	{"ft_strmapi", tests_ft_strmapi},
+	{"ft_striteri", tests_ft_striteri},
 };
 
 // Find a function pointer based on its name

@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests_ft_strmapi.c                                 :+:      :+:    :+:   */
+/*   tests_ft_striteri.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 19:12:17 by xvislock          #+#    #+#             */
-/*   Updated: 2024/04/22 19:12:17 by xvislock         ###   ########.fr       */
+/*   Created: 2024/04/22 20:05:56 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/22 20:05:56 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
-#include "../ft_strmapi.c"
+#include "../ft_striteri.c"
 
-static char make_uppercase(unsigned int i, char c)
+static void make_uppercase(unsigned int i, char *c)
 {
+	char new;
 	printf("%d\n", i);
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	if (*c >= 'a' && *c <= 'z')
+	{
+		new = *c - 32;
+		c = &new;
+	}
 }
 
-void	tests_ft_strmapi(void)
+void	tests_ft_striteri(void)
 {
-	const char *s = "Hello :)";
-	char *new_s = ft_strmapi(s, make_uppercase);
-	printf("%s\n", new_s);
+	char *s = "Hello there ! :)";
+
+	printf("%s\n", s);
+	ft_striteri(s, make_uppercase);
+	printf("%s\n", s);
 
 }

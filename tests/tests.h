@@ -46,6 +46,7 @@ void	tests_ft_strtrim(void);
 void	tests_ft_split(void);
 void	tests_ft_itoa(void);
 void	tests_ft_strmapi(void);
+void	tests_ft_striteri(void);
 
 
 #endif
