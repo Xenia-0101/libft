@@ -34,11 +34,31 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-static int	ft_strlen(const char *str)
+static unsigned int	ft_strlen(const char *str);
+static void *ft_calloc(size_t elc, size_t els);
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	count;
+	char			*s_map;
+	unsigned int	i;
+
+	s_map = ft_calloc(ft_strlen(s) + 1, sizeof (char));
+	if (!s_map)
+		return (NULL);
+	i = 0;
+	while (i < ft_strlen(s))
+	{
+		s_map[i] = f(i, s[i]);
+		i++;
+	}
+	s_map[i] = '\0';
+	return (s_map);
+}
+
+static unsigned int	ft_strlen(const char *str)
+{
+	unsigned int	count;
 
 	count = 0;
 	while (*str++)
@@ -63,23 +83,5 @@ static void *ft_calloc(size_t elc, size_t els)
 		t_ptr[c] = '\0';
 	return (ptr);
 }
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	char *s_map;
-	int i;
-
-	s_map = ft_calloc(ft_strlen(s) + 1, sizeof (char));
-	if (!s_map)
-		return (NULL);
-	i = 0;
-	while (i < ft_strlen(s))
-	{
-		s_map[i] = f(i, s[i]);
-		i++;
-	}
-	s_map[i] = '\0';
-	return (s_map);
-}
-
 
 
