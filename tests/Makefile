@@ -38,6 +38,7 @@ tests_ft_split.c \
 tests_ft_itoa.c \
 tests_ft_strmapi.c \
 tests_ft_striteri.c \
+tests_ft_putchar_fd.c \
 
 OBJS = ${SRCS:.c=.o}
 

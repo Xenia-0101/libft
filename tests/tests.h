@@ -7,6 +7,7 @@
 # include <stddef.h>
 # include <string.h>
 # include <ctype.h>
+# include <fcntl.h>
 
 // helpers
 void	tests__print(const char *test, int passed);
@@ -47,6 +48,7 @@ void	tests_ft_split(void);
 void	tests_ft_itoa(void);
 void	tests_ft_strmapi(void);
 void	tests_ft_striteri(void);
+void	tests_ft_putchar_fd(void);
 
 
 #endif

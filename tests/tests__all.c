@@ -32,4 +32,5 @@ void tests__all(void) {
 	tests_ft_split();
 	tests_ft_itoa();
 	tests_ft_striteri();
+	tests_ft_putchar_fd();
 }
