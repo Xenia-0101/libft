@@ -51,6 +51,7 @@ void	tests_ft_striteri(void);
 void	tests_ft_putchar_fd(void);
 void	tests_ft_putstr_fd(void);
 void	tests_ft_putnbr_fd(void);
+void	tests_ft_lstnew_bonus(void);
 
 
 #endif
