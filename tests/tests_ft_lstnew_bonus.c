@@ -12,6 +12,7 @@
 
 #include "tests.h"
 #include "../ft_lstnew_bonus.c"
+#include "../ft_lstadd_front_bonus.c"
 
 static int	fft_strcmp(const char *s1, const char *s2)
 {
@@ -50,8 +51,40 @@ void test_ft_lstnew_2_number(void)
 	tests__print("test_ft_lstnew_2_number", pass);
 }
 
+void test_ft_lstadd_front_1(void)
+{
+	int pass  = 1;
+
+	t_list *list = ft_lstnew("world");
+	t_list *new_node = ft_lstnew("hello");
+	ft_lstadd_front(&list, new_node);
+	if (!list->content || !list->next)
+		pass = 0;
+	if (fft_strcmp((char *)list->content, "hello") ||
+		fft_strcmp((char *)list->next, "world"))
+		pass = 0;
+	tests__print("test_ft_lstadd_front_1", pass);
+}
+
+void test_ft_lstadd_front_2(void)
+{
+	int pass  = 1;
+
+	t_list *list = ft_lstnew("world");
+	ft_lstadd_front(&list, list->next);
+	if (!list->content || list->next)
+		pass = 0;
+	if (fft_strcmp((char *)list->content, "world"))
+		pass = 0;
+	tests__print("test_ft_lstadd_front_2", pass);
+}
+
 void	tests_ft_lstnew_bonus(void)
 {
 	test_ft_lstnew_1_string();
 	test_ft_lstnew_2_number();
+
+	test_ft_lstadd_front_1();
+	test_ft_lstadd_front_2();
+
 }

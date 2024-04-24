@@ -59,6 +59,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 char	*ft_strcpy(char *dest, const char *src);
