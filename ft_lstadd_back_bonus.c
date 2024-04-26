@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 19:10:00 by xvislock          #+#    #+#             */
-/*   Updated: 2024/04/24 19:10:00 by xvislock         ###   ########.fr       */
+/*   Created: 2024/04/25 16:28:58 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/25 16:28:58 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,14 @@
 		None
 
 	Description
-		Adds the node ’new’ at the beginning of the list.
+		Adds the node ’new’ at the end of the list.
 */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (!lst || !(*lst)->content || !new)
 		return ;
-	new->next = (*lst);
-	*lst = new;
+	(*lst)->next = new;
 }

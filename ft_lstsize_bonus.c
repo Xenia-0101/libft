@@ -1,38 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 19:10:00 by xvislock          #+#    #+#             */
-/*   Updated: 2024/04/24 19:10:00 by xvislock         ###   ########.fr       */
+/*   Created: 2024/04/25 13:58:45 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/25 13:58:45 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-	Parameters
-		lst: The address of a pointer to the first link of
-		a list.
-		new: The address of a pointer to the node to be
-		added to the list.
+Parameters
+	lst: The beginning of the list.
 
-	Return value
-		None
+Return value
+	The length of the list
 
-	External functs.
-		None
+External functs.
+	None
 
-	Description
-		Adds the node ’new’ at the beginning of the list.
+Description
+	Counts the number of nodes in a list.
 */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	if (!lst || !(*lst)->content || !new)
-		return ;
-	new->next = (*lst);
-	*lst = new;
+	int	count;
+
+	count = 0;
+	if (lst->content)
+		count++;
+	while (lst->next)
+	{
+		count++;
+		*lst = *lst->next;
+	}
+	return (count);
 }

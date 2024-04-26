@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 19:10:00 by xvislock          #+#    #+#             */
-/*   Updated: 2024/04/24 19:10:00 by xvislock         ###   ########.fr       */
+/*   Created: 2024/04/25 16:03:56 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/25 16:03:56 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-	Parameters
-		lst: The address of a pointer to the first link of
-		a list.
-		new: The address of a pointer to the node to be
-		added to the list.
+Parameters
+	lst: The beginning of the list.
 
-	Return value
-		None
+Return value
+	Last node of the list
 
-	External functs.
-		None
+External functs.
+	None
 
-	Description
-		Adds the node ’new’ at the beginning of the list.
+Description
+	Returns the last node of the list.
 */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst || !(*lst)->content || !new)
-		return ;
-	new->next = (*lst);
-	*lst = new;
+	if (lst->next)
+	{
+		while (lst->next)
+			*lst = *lst->next;
+	}
+	return (lst);
 }
