@@ -17,6 +17,7 @@
 #include "../ft_lstlast_bonus.c"
 #include "../ft_lstadd_back_bonus.c"
 #include "../ft_lstdelone_bonus.c"
+#include "../ft_lstclear_bonus.c"
 
 static int	fft_strcmp(const char *s1, const char *s2)
 {
@@ -30,10 +31,13 @@ static int	fft_strcmp(const char *s1, const char *s2)
 	return (*s1 - *s2);
 }
 
-static void del_node_content(void *cont)
+static void	del_node_content(void *cont)
 {
+	printf("\t\t deleting \t%s\n", (char *)cont);
 	while (*(char *)cont)
+	{
 		*(char *)cont++ = '\0';
+	}
 	return ;
 }
 
@@ -192,7 +196,31 @@ void test_ft_lstdelone_1 (void)
 
 	t_list *to_delete = list->next->next->next;
 	ft_lstdelone(to_delete, del_node_content);
-	printf("test_ft_lstdelone_1 ran without crashing.");
+	tests__print("test_ft_lstdelone_1 ran without crashing.\n", 1);
+}
+
+void test_ft_lstclear_1(void)
+{
+
+	char a[] = "five";
+	char b[] = "four";
+	char c[] = "three";
+	char d[] = "two";
+	char e[] = "one";
+	t_list *list = ft_lstnew(a);
+	t_list *four = ft_lstnew(b);
+	t_list *three = ft_lstnew(c);
+	t_list *two = ft_lstnew(d);
+	t_list *one = ft_lstnew(e);
+	ft_lstadd_front(&list, four);
+	ft_lstadd_front(&list, three);
+	ft_lstadd_front(&list, two);
+	ft_lstadd_front(&list, one);
+	printf("List created\n");
+
+	ft_lstclear(&list->next->next, del_node_content);
+
+	tests__print("test_ft_lstclear_1 ran without crashing :)\n", 1);
 }
 
 void	tests_ft_lstnew_bonus(void)
@@ -213,4 +241,8 @@ void	tests_ft_lstnew_bonus(void)
 	test_ft_lstadd_back_1_one_new();
 
 	test_ft_lstdelone_1();
+
+	test_ft_lstclear_1();
+
+
 }
