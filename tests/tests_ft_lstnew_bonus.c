@@ -30,6 +30,13 @@ static int	fft_strcmp(const char *s1, const char *s2)
 	return (*s1 - *s2);
 }
 
+static void del_node_content(void *cont)
+{
+	while (*(char *)cont)
+		*(char *)cont++ = '\0';
+	return ;
+}
+
 void test_ft_lstnew_1_string(void)
 {
 	int pass = 1;
@@ -173,7 +180,19 @@ void test_ft_lstadd_back_1_one_new(void)
 
 void test_ft_lstdelone_1 (void)
 {
+	t_list *list = ft_lstnew("five");
+	t_list *four = ft_lstnew("four");
+	t_list *three = ft_lstnew("three");
+	t_list *two = ft_lstnew("two");
+	t_list *one = ft_lstnew("one");
+	ft_lstadd_front(&list, four);
+	ft_lstadd_front(&list, three);
+	ft_lstadd_front(&list, two);
+	ft_lstadd_front(&list, one);
 
+	t_list *to_delete = list->next->next->next;
+	ft_lstdelone(to_delete, del_node_content);
+	printf("test_ft_lstdelone_1 ran without crashing.");
 }
 
 void	tests_ft_lstnew_bonus(void)
@@ -193,16 +212,5 @@ void	tests_ft_lstnew_bonus(void)
 
 	test_ft_lstadd_back_1_one_new();
 
-	t_list *list = ft_lstnew("five");
-	t_list *four = ft_lstnew("four");
-	t_list *three = ft_lstnew("three");
-	t_list *two = ft_lstnew("two");
-	t_list *one = ft_lstnew("one");
-	ft_lstadd_front(&list, four);
-	ft_lstadd_front(&list, three);
-	ft_lstadd_front(&list, two);
-	ft_lstadd_front(&list, one);
-
-	t_list *to_delete = list->next->next->next;
-	ft_lstdelone(to_delete);
+	test_ft_lstdelone_1();
 }
