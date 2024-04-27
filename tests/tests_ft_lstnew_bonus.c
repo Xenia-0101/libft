@@ -18,6 +18,7 @@
 #include "../ft_lstadd_back_bonus.c"
 #include "../ft_lstdelone_bonus.c"
 #include "../ft_lstclear_bonus.c"
+#include "../ft_lstiter_bonus.c"
 
 static int	fft_strcmp(const char *s1, const char *s2)
 {
@@ -39,6 +40,17 @@ static void	del_node_content(void *cont)
 		*(char *)cont++ = '\0';
 	}
 	return ;
+}
+
+static void	fft_toupper(void *c)
+{
+	char *s = (char *)c;
+	while (*s)
+	{
+		if (*s >= 'a' && *s < 'z')
+			*s = (*s - 32);
+		s++;
+	}
 }
 
 void test_ft_lstnew_1_string(void)
@@ -201,7 +213,6 @@ void test_ft_lstdelone_1 (void)
 
 void test_ft_lstclear_1(void)
 {
-
 	char a[] = "five";
 	char b[] = "four";
 	char c[] = "three";
@@ -221,6 +232,33 @@ void test_ft_lstclear_1(void)
 	ft_lstclear(&list->next->next, del_node_content);
 
 	tests__print("test_ft_lstclear_1 ran without crashing :)\n", 1);
+}
+
+void test_ft_lstiter_1(void)
+{
+	char a[] = "five";
+	char b[] = "four";
+	char c[] = "three";
+	char d[] = "two";
+	char e[] = "one";
+	t_list *list = ft_lstnew(a);
+	t_list *four = ft_lstnew(b);
+	t_list *three = ft_lstnew(c);
+	t_list *two = ft_lstnew(d);
+	t_list *one = ft_lstnew(e);
+	ft_lstadd_front(&list, four);
+	ft_lstadd_front(&list, three);
+	ft_lstadd_front(&list, two);
+	ft_lstadd_front(&list, one);
+
+	ft_lstiter(list, fft_toupper);
+	printf("%s\n", (char *)list->content);
+	printf("%s\n", (char *)list->next->content);
+	printf("%s\n", (char *)list->next->next->content);
+	printf("%s\n", (char *)list->next->next->next->content);
+	printf("%s\n", (char *)list->next->next->next->next->content);
+
+	tests__print("test_ft_lstiter_1 ran without crashing :)\n", 1);
 }
 
 void	tests_ft_lstnew_bonus(void)
@@ -243,6 +281,8 @@ void	tests_ft_lstnew_bonus(void)
 	test_ft_lstdelone_1();
 
 	test_ft_lstclear_1();
+
+	test_ft_lstiter_1();
 
 
 }
