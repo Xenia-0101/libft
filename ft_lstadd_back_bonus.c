@@ -31,7 +31,15 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !(*lst)->content || !new)
+	if (!new)
 		return ;
-	(*lst)->next = new;
+	if (!(*lst))
+		return ;
+	if ((*lst)->next)
+	{
+		ft_lstadd_back(&(*lst)->next, new);
+	}
+	else{
+		(*lst)->next = new;
+	}
 }
