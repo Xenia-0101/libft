@@ -19,6 +19,7 @@
 #include "../ft_lstdelone_bonus.c"
 #include "../ft_lstclear_bonus.c"
 #include "../ft_lstiter_bonus.c"
+#include "../ft_lstmap_bonus.c"
 
 static int	fft_strcmp(const char *s1, const char *s2)
 {
@@ -51,6 +52,28 @@ static void	fft_toupper(void *c)
 			*s = (*s - 32);
 		s++;
 	}
+}
+
+static void	*ftt_toupper(void *c)
+{
+	char *s = (char *)c;
+	char *t_s;
+
+	t_s = s;
+	while (*s)
+	{
+		if (*s >= 'a' && *s < 'z')
+			*s = (*s - 32);
+		s++;
+	}
+	return ((void *)t_s);
+}
+
+static void print_lst(t_list *lst)
+{
+	printf("%s\n", (char *)lst->content);
+	if (lst->next)
+		print_lst(lst->next);
 }
 
 void test_ft_lstnew_1_string(void)
@@ -194,6 +217,25 @@ void test_ft_lstadd_back_1_one_new(void)
 	tests__print("test_ft_lstadd_back_1_one_new", pass);
 }
 
+void test_ft_lstadd_back_2_three_new(void)
+{
+	int pass  = 1;
+
+	t_list *list = ft_lstnew("hello");
+	t_list *new_node = ft_lstnew("world");
+	t_list *next_node = ft_lstnew("!!!");
+	ft_lstadd_back(&list, new_node);
+	ft_lstadd_back(&list, next_node);
+	if (!list->content || !list->next)
+		pass = 0;
+	if (fft_strcmp((char *)list->content, "hello") ||
+		fft_strcmp((char *)list->next->content, "world") ||
+		fft_strcmp((char *)list->next->next->content, "!!!"))
+		pass = 0;
+
+	tests__print("test_ft_lstadd_back_2_three_new", pass);
+}
+
 void test_ft_lstdelone_1 (void)
 {
 	t_list *list = ft_lstnew("five");
@@ -252,13 +294,33 @@ void test_ft_lstiter_1(void)
 	ft_lstadd_front(&list, one);
 
 	ft_lstiter(list, fft_toupper);
-	printf("%s\n", (char *)list->content);
-	printf("%s\n", (char *)list->next->content);
-	printf("%s\n", (char *)list->next->next->content);
-	printf("%s\n", (char *)list->next->next->next->content);
-	printf("%s\n", (char *)list->next->next->next->next->content);
+	print_lst(list);
 
 	tests__print("test_ft_lstiter_1 ran without crashing :)\n", 1);
+}
+
+void test_ft_lstmap_1(void)
+{
+	char a[] = "five";
+	char b[] = "four";
+	char c[] = "three";
+	char d[] = "two";
+	char e[] = "one";
+	t_list *list = ft_lstnew(a);
+	t_list *four = ft_lstnew(b);
+	t_list *three = ft_lstnew(c);
+	t_list *two = ft_lstnew(d);
+	t_list *one = ft_lstnew(e);
+	ft_lstadd_front(&list, four);
+	ft_lstadd_front(&list, three);
+	ft_lstadd_front(&list, two);
+	ft_lstadd_front(&list, one);
+
+	print_lst(list);
+	t_list *new_list = ft_lstmap(list, ftt_toupper, del_node_content);
+	print_lst(new_list);
+
+	tests__print("test_ft_lstmap_1 ran without crashing :)\n", 1);
 }
 
 void	tests_ft_lstnew_bonus(void)
@@ -277,6 +339,7 @@ void	tests_ft_lstnew_bonus(void)
 	test_ft_lstlast_1();
 
 	test_ft_lstadd_back_1_one_new();
+	test_ft_lstadd_back_2_three_new();
 
 	test_ft_lstdelone_1();
 
@@ -284,5 +347,5 @@ void	tests_ft_lstnew_bonus(void)
 
 	test_ft_lstiter_1();
 
-
+	test_ft_lstmap_1();
 }
