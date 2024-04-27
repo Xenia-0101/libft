@@ -9,7 +9,22 @@ void test_ft_memset_1(void) {
 	printf("%s\n", str);
 }
 
+void test_ft_memset_2(void) {
+	char str[] = "Hello World.";
+	ft_memset(str, 'x', 1);
+	printf("%s\n", str);
+}
+
+void test_ft_memset_3(void) {
+	char str[] = "Hello World.";
+	ft_memset(str, 'x', 0);
+	printf("%s\n", str);
+}
+
+
 void tests_ft_memset(void) {
 	printf("tests for ft_memset not finished\n");
 	test_ft_memset_1();
+	test_ft_memset_2();
+	test_ft_memset_3();
 }
