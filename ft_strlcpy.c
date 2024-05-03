@@ -19,11 +19,10 @@
 	caller must either check the arguments before the call, or test the function return value.
 */
 
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-
 	int	s_len;
 
 	s_len = 0;

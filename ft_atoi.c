@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 static int	ft_isspace(int c);
-static int	ft_isdigit(int c);
 
 int	ft_atoi(const char *nptr)
 {
@@ -42,9 +43,4 @@ static int	ft_isspace(int c)
 {
 	return ((c == '\f') | (c == '\n') | (c == '\r') |
 			(c == '\t') | (c == '\v') | (c == ' '));
-}
-
-static int	ft_isdigit(int c)
-{
-	return (c >= '0' && c <= '9');
 }

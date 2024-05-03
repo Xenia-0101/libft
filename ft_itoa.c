@@ -27,25 +27,7 @@
 		Negative numbers must be handled.
 */
 
-#include <stdio.h>
-
-static void *ft_calloc(size_t elc, size_t els)
-{
-	void	*ptr;
-	char	*t_ptr;
-	int		c;
-
-	if (elc == 0 || els == 0)
-		elc = els = 1;
-	c = elc * els;
-	ptr = malloc(c);
-	if (!ptr)
-		return (NULL);
-	t_ptr = ptr;
-	while (c-- != 0)
-		t_ptr[c] = '\0';
-	return (ptr);
-}
+#include "libft.h"
 
 static int	count_units(int n)
 {

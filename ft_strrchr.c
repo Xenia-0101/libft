@@ -21,7 +21,7 @@ RETURN VALUE
 	functions return a pointer to the terminator.
 */
 
-#include <stdio.h>
+#include "libft.h"
 
 static int	fft_strlen(char *str);
 

@@ -22,8 +22,7 @@
 		malloc(nmemb * size);
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void *ft_calloc(size_t elc, size_t els)
 {

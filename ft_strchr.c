@@ -22,9 +22,7 @@ found. The terminating null byte is considered part of the string, so that if c 
 functions return a pointer to the terminator.
 */
 
-#include <stdio.h>
-
-static int	ft_strlen(char *str);
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -37,14 +35,4 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	}
 	return (NULL);
-}
-
-static int	ft_strlen(char *str)
-{
-	int	count;
-
-	count = 0;
-	while (*str++)
-		count++;
-	return (count);
 }

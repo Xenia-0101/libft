@@ -28,8 +28,7 @@ Description
 	from the beginning and the end of the string.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static int	char_in_set(char a, const char *set)
 {
@@ -39,36 +38,6 @@ static int	char_in_set(char a, const char *set)
 			return (1);
 	}
 	return (0);
-}
-
-static int	ft_strlen(const char *str)
-{
-	int	count;
-
-	count = 0;
-	while (*str++)
-		count++;
-	return (count);
-}
-static void	ft_bzero(void *s, size_t n)
-{
-	char *temp;
-
-	temp = (char *)s;
-	while (n-- > 0)
-		*temp++ = '\0';
-}
-
-static void	*ft_calloc(size_t elc, size_t els)
-{
-	void *ptr;
-
-	if (elc == 0 || els == 0)
-		elc = els = 1;
-	ptr = malloc(elc * els);
-	if (ptr)
-		ft_bzero(ptr, elc * els);
-	return (ptr);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -83,7 +52,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	while (char_in_set(s1[start], set))
 		start++;
-	end = ft_strlen(s1);
+	end = ft_strlen((char *)s1);
 	while (char_in_set(s1[end - 1], set))
 		end--;
 	trim = ft_calloc(end - start + 1, sizeof (char));

@@ -19,6 +19,8 @@
 		strncpy() functions return a pointer to the destination string dest.
 */
 
+#include "libft.h"
+
 char	*ft_strcpy(char *dest, const char *src)
 {
 	char *t_dest;

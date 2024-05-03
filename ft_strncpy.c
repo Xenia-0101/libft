@@ -27,7 +27,7 @@ NOTES
 	that the buffer is not overflowed and that unused bytes in the destination buffer are zeroed out
 */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {

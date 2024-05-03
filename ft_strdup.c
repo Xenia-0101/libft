@@ -16,10 +16,8 @@
 		new string is obtained with malloc(3), and can be freed with free(3).
 */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-static int	ft_strlen(char *str);
 
 char *ft_strdup(const char *s)
 {
@@ -37,14 +35,4 @@ char *ft_strdup(const char *s)
 	}
 	*dup = '\0';
 	return (dup);
-}
-
-static int	ft_strlen(char *str)
-{
-	int	count;
-
-	count = 0;
-	while (*str++)
-		count++;
-	return (count);
 }

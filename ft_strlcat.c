@@ -19,9 +19,7 @@ return  value is greater than or equal to size, data loss occurred.  If data los
 ther check the arguments before the call, or test the function return value.
 */
 
-#include <stdio.h>
-
-static int	ft_strlen(char *str);
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
@@ -38,14 +36,4 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 		*dest++ = *src++;
 	*dest = '\0';
 	return (d_len + s_len);
-}
-
-static int	ft_strlen(char *str)
-{
-	int		count;
-
-	count = 0;
-	while (*str++)
-		count++;
-	return (count);
 }

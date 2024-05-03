@@ -24,7 +24,7 @@ RETURN VALUE
 	in the first n characters of src.
 */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {

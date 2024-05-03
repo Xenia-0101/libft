@@ -32,22 +32,18 @@
 		from successive applications of ’f’.
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-
-static unsigned int	ft_strlen(const char *str);
-static void *ft_calloc(size_t elc, size_t els);
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*s_map;
-	unsigned int	i;
+	int	i;
 
-	s_map = ft_calloc(ft_strlen(s) + 1, sizeof (char));
+	s_map = ft_calloc(ft_strlen((char *)s) + 1, sizeof (char));
 	if (!s_map)
 		return (NULL);
 	i = 0;
-	while (i < ft_strlen(s))
+	while (i < ft_strlen((char *)s))
 	{
 		s_map[i] = f(i, s[i]);
 		i++;
@@ -55,33 +51,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	s_map[i] = '\0';
 	return (s_map);
 }
-
-static unsigned int	ft_strlen(const char *str)
-{
-	unsigned int	count;
-
-	count = 0;
-	while (*str++)
-		count++;
-	return (count);
-}
-
-static void *ft_calloc(size_t elc, size_t els)
-{
-	void	*ptr;
-	char	*t_ptr;
-	int		c;
-
-	if (elc == 0 || els == 0)
-		elc = els = 1;
-	c = elc * els;
-	ptr = malloc(c);
-	if (!ptr)
-		return (NULL);
-	t_ptr = ptr;
-	while (c-- != 0)
-		t_ptr[c] = '\0';
-	return (ptr);
-}
-
-
