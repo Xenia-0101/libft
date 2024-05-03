@@ -1,6 +1,7 @@
 NAME = app
 CC = gcc
 CCFLAGS = -Wall -Werror -Wextra
+
 SRCS = \
 get_function_pointer.c \
 tests__all.c \

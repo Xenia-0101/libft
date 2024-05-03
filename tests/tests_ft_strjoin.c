@@ -12,6 +12,7 @@
 
 #include "tests.h"
 #include "../ft_strjoin.c"
+# include "../ft_calloc.c"
 
 static int	fft_strcmp(const char *s1, const char *s2)
 {

@@ -2,7 +2,7 @@
 #include "tests.h"
 #include "../ft_memmove.c"
 
-static int	ft_strcmp(const char *s1, const char *s2)
+/* static int	ft_strcmp(const char *s1, const char *s2)
 {
 	while (*s1)
 	{
@@ -12,7 +12,7 @@ static int	ft_strcmp(const char *s1, const char *s2)
 		s2++;
 	}
 	return (*s1 - *s2);
-}
+} */
 
 void test_ft_memmove_1(void)
 {

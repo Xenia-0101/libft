@@ -13,7 +13,7 @@
 #include "tests.h"
 #include "../ft_strtrim.c"
 
-static int	ft_strcmp(const char *s1, const char *s2)
+/* static int	ft_strcmp(const char *s1, const char *s2)
 {
 	while (*s1)
 	{
@@ -23,7 +23,7 @@ static int	ft_strcmp(const char *s1, const char *s2)
 		s2++;
 	}
 	return (*s1 - *s2);
-}
+} */
 
 void	test_ft_strtrim_1(void)
 {
