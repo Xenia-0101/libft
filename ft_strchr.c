@@ -30,7 +30,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s + ft_strlen((char *)s));
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char )c)
 			return ((char *)s);
 		s++;
 	}

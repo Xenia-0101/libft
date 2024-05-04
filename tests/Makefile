@@ -1,6 +1,6 @@
 NAME = app
 CC = gcc
-CCFLAGS = -Wall -Werror -Wextra
+CCFLAGS = -Wall -Werror -Wextra -g
 
 SRCS = \
 get_function_pointer.c \
@@ -43,6 +43,7 @@ tests_ft_putchar_fd.c \
 tests_ft_putstr_fd.c \
 tests_ft_putnbr_fd.c \
 tests_ft_lstnew_bonus.c \
+tests_ft_calloc.c \
 
 OBJS = ${SRCS:.c=.o}
 

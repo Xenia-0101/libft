@@ -39,17 +39,16 @@ Description
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char *sub;
-	char *t_sub;
+
 	if (len == 0 || ft_strlen((char *)s) < (int)start + 1)
-		return (NULL);
-	sub = ft_calloc(len + 1, sizeof (char));
+		return (ft_calloc(0, 0));
+	if (len > (size_t )ft_strlen((char *)(s + start)))
+		len = (size_t )ft_strlen((char *)(s + start));
+	sub = malloc(sizeof (char) * len + 1);
 	if (!sub)
 		return (NULL);
-	t_sub = sub;
-	while (len-- && s[start])
-	{
-		*t_sub++ = s[start++];
-	}
-	*t_sub = '\0';
+	ft_bzero(sub, len + 1);
+	ft_memcpy(sub, s + start, len);
 	return (sub);
 }
+

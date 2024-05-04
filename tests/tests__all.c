@@ -18,7 +18,7 @@ void tests__all(void) {
 	tests_ft_strchr();
 	tests_ft_strcpy();
 	tests_ft_strcmp();
-	// tests_ft_strdup();
+	tests_ft_substr();
 	tests_ft_strjoin();
 	tests_ft_strlcat();
 	tests_ft_strlen();
@@ -36,4 +36,5 @@ void tests__all(void) {
 	tests_ft_putstr_fd();
 	tests_ft_putnbr_fd();
 	tests_ft_lstnew_bonus();
+	tests_ft_calloc();
 }

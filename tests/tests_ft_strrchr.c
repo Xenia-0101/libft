@@ -67,10 +67,24 @@ void	test_ft_strrchr_4_terminator(void)
 	tests__print("test_ft_strrchr_4_terminator", pass);
 }
 
+void	test_ft_strrchr_5_leak(void)
+{
+	int pass = 1;
+	const char *s = "hello there";
+	char *new_s = ft_strrchr(s, 't' + 256);
+
+	if (strcmp(new_s, strrchr(s, 't' + 256)))
+		pass = 0;
+	if (strcmp(new_s-2, strrchr(s, 't' + 256)-2))
+		pass = 0;
+	tests__print("test_ft_strrchr_5_leak", pass);
+}
+
 void tests_ft_strrchr(void)
 {
  test_ft_strrchr_1_occurs_once();
  test_ft_strrchr_2_occurs_twice();
  test_ft_strrchr_3_not_in_string();
  test_ft_strrchr_4_terminator();
+ test_ft_strrchr_5_leak();
 }

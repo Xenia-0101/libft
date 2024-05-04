@@ -35,7 +35,7 @@ void test_ft_strlcpy_2(void)
 
 	size_t s_len =  ft_strlcpy(dest, src, 10);
 	pass = 1;
-	if (s_len != 9 || strcmp(dest, "Hello, Wo"))
+	if (s_len != 13 || strcmp(dest, "Hello, Wo"))
 		pass = 0;
 	tests__print("test_ft_strlcpy_2", pass);
 	printf("src: %s\tres: <%s>, %ld\texp: <Hello, Wo>, 9\n", src, dest, s_len);
@@ -49,7 +49,7 @@ void test_ft_strlcpy_3(void)
 
 	size_t s_len =  ft_strlcpy(dest, src, 5);
 	pass = 1;
-	if (s_len != 4 || strcmp(dest, "Hell"))
+	if (s_len != 13 || strcmp(dest, "Hell"))
 		pass = 0;
 	tests__print("test_ft_strlcpy_3", pass);
 	printf("src: %s\tres: <%s>, %ld\texp: <Hell>, 4\n", src, dest, s_len);
@@ -77,9 +77,22 @@ void test_ft_strlcpy_5(void)
 
 	size_t s_len =  ft_strlcpy(dest, src, 1);
 	pass = 1;
-	if (s_len != 0 || strcmp(dest, ""))
+	if (s_len != 13 || strcmp(dest, ""))
 		pass = 0;
 	tests__print("test_ft_strlcpy_5", pass);
+	printf("src: %s\tres: <%s>, %ld\texp: <>, 0\n", src, dest, s_len);
+}
+
+void test_ft_strlcpy_6(void)
+{
+	int pass = 1;
+	char src[] = "coucou";
+	char dest[10]; memset(dest, 'A', 10);
+	size_t s_len =  ft_strlcpy(dest, src, 0);
+
+	if (s_len != 6 || strcmp(dest, "AAAAAAAAAA"))
+		pass = 0;
+	tests__print("test_ft_strlcpy_6", pass);
 	printf("src: %s\tres: <%s>, %ld\texp: <>, 0\n", src, dest, s_len);
 }
 
@@ -90,4 +103,5 @@ void tests_ft_strlcpy(void)
 	test_ft_strlcpy_3();
 	test_ft_strlcpy_4();
 	test_ft_strlcpy_5();
+	test_ft_strlcpy_6();
 }

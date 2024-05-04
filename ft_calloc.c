@@ -24,20 +24,19 @@
 
 #include "libft.h"
 
-void *ft_calloc(size_t elc, size_t els)
+void	*ft_calloc(size_t elc, size_t els)
 {
 	void	*ptr;
-	char	*t_ptr;
-	int		c;
+	size_t		c;
 
 	if (elc == 0 || els == 0)
 		elc = els = 1;
 	c = elc * els;
+	if (c < elc || c < els)
+		return (NULL) ;
 	ptr = malloc(c);
 	if (!ptr)
 		return (NULL);
-	t_ptr = ptr;
-	while (c-- != 0)
-		t_ptr[c] = '\0';
+	ft_bzero(ptr, c);
 	return (ptr);
 }

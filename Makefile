@@ -59,7 +59,7 @@ ft_lstsize_bonus.c \
 OBJS = ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
-all: ${NAME}
+all: ${NAME} clean
 
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}

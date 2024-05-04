@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   tests_ft_calloc.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/11 11:41:37 by xvislock          #+#    #+#             */
-/*   Updated: 2024/04/11 11:41:37 by xvislock         ###   ########.fr       */
+/*   Created: 2024/05/04 17:20:22 by xvislock          #+#    #+#             */
+/*   Updated: 2024/05/04 17:20:22 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "tests.h"
+#include "../ft_calloc.c"
 
-int	ft_isprint(int c)
+void	tests_ft_calloc(void)
 {
-	return (!((c >= 0 && c < 32) || c == 127));
+	return ;
 }

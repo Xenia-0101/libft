@@ -13,18 +13,6 @@
 #include "tests.h"
 #include "../ft_strtrim.c"
 
-/* static int	ft_strcmp(const char *s1, const char *s2)
-{
-	while (*s1)
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
-} */
-
 void	test_ft_strtrim_1(void)
 {
 	int			pass = 1;
@@ -90,6 +78,17 @@ void	test_ft_strtrim_5(void)
 	tests__print("test_ft_strtrim_5", pass);
 }
 
+void	test_ft_strtrim_6(void)
+{
+	int			pass = 1;
+	const char	*exp = "";
+	char		*res = ft_strtrim("   xxx   xxx", " x");
+
+	if (!res || ft_strcmp(res, exp))
+		pass = 0;
+	tests__print("test_ft_strtrim_6", pass);
+}
+
 void	tests_ft_strtrim(void)
 {
 	test_ft_strtrim_1();
@@ -97,4 +96,5 @@ void	tests_ft_strtrim(void)
 	test_ft_strtrim_3();
 	test_ft_strtrim_4();
 	test_ft_strtrim_5();
+	test_ft_strtrim_6();
 }

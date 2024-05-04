@@ -26,7 +26,7 @@ FunctionMapping functions[] = {
 	{"ft_strrchr", tests_ft_strrchr},
 	{"ft_strcmp", tests_ft_strcmp},
 	{"ft_strcpy", tests_ft_strcpy},
-	// {"ft_strdup", tests_ft_strdup},
+	{"ft_substr", tests_ft_substr},
 	{"ft_strjoin", tests_ft_strjoin},
 	{"ft_strlcat", tests_ft_strlcat},
 	{"ft_strlcpy", tests_ft_strlcpy},
@@ -46,6 +46,7 @@ FunctionMapping functions[] = {
 	{"ft_putstr_fd", tests_ft_putstr_fd},
 	{"ft_putnbr_fd", tests_ft_putnbr_fd},
 	{"ft_lstnew", tests_ft_lstnew_bonus},
+	{"ft_calloc", tests_ft_calloc},
 };
 
 // Find a function pointer based on its name

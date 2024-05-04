@@ -91,6 +91,16 @@ void test_ft_memchr_6(void)
 	tests__print("test_ft_memchr_6", pass);
 }
 
+void test_ft_memchr_7(void)
+{
+	int pass = 1;
+	char str[] = {0, 1, 2 ,3 ,4 ,5};
+	char *t_str = ft_memchr(str, 2 + 256, 3);
+	if (ft_strcmp(t_str, memchr(str, 2 + 256, 3)))
+		pass = 0;
+	tests__print("test_ft_memchr_7", pass);
+}
+
 void tests_ft_memchr(void)
 {
 	test_ft_memchr_1();
@@ -99,4 +109,5 @@ void tests_ft_memchr(void)
 	test_ft_memchr_4();
 	test_ft_memchr_5();
 	test_ft_memchr_6();
+	test_ft_memchr_7();
 }

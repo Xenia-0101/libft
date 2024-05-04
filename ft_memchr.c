@@ -31,8 +31,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		src = (const unsigned char *)s;
 		while (n-- != 0)
 		{
-			if (*src++ == c)
+			if (*src++ == (char )c)
+			{
 				return ((void *)(src - 1));
+			}
 		}
 	}
 	return (NULL);

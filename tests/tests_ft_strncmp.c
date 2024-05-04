@@ -79,5 +79,5 @@ void tests_ft_strncmp(void)
 	test_ft_strncmp_2_larger();
 	test_ft_strncmp_3_lower();
 	test_ft_strncmp_4_empty_1();
-	test_ft_strncmp_5_empty_2();
+	test_ft_strncmp_5_empty_2(); 
 }

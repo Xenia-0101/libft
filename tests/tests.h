@@ -41,7 +41,7 @@ void	tests_ft_memchr(void);
 void	tests_ft_memcmp(void);
 void	tests_ft_strnstr(void);
 void	tests_ft_strcmp(void);
-void	tests_ft_strdup(void);
+void	tests_ft_substr(void);
 void	tests_ft_strjoin(void);
 void	tests_ft_strtrim(void);
 void	tests_ft_split(void);
@@ -52,6 +52,7 @@ void	tests_ft_putchar_fd(void);
 void	tests_ft_putstr_fd(void);
 void	tests_ft_putnbr_fd(void);
 void	tests_ft_lstnew_bonus(void);
+void	tests_ft_calloc(void);
 
 
 #endif

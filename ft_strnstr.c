@@ -21,6 +21,30 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
+	size_t len;
+	size_t t_n;
+	size_t counter;
+
+	if (!*little)
+		return ((char *)big);
+	len = ft_strlen((char *)little);
+	t_n = n;
+	counter = 0;
+	while (*big && n-- > 0)
+	{
+		if ((!ft_strncmp(little, big, len)) && !(counter + len > t_n))
+			return ((char *)big);
+		else
+		{
+			big++;
+			counter++;
+		}
+	}
+	return (NULL);
+}
+/*
+char	*ft_strnstr(const char *big, const char *little, size_t n)
+{
 	const char	*b;
 	const char	*l;
 
@@ -45,4 +69,4 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 			big++;
 	}
 	return (NULL);
-}
+} */

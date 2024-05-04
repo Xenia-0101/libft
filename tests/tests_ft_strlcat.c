@@ -68,6 +68,32 @@ void test_ft_strlcat_5_concat_empty_string(void)
 	tests__print("test_ft_strlcat_5_concat_empty_string", pass);
 }
 
+void test_ft_strlcat_6_size_is_zero(void)
+{
+	int pass = 1;
+	char dest[30];
+	memset(dest, 0, 30);
+	char * src = (char *)"AAAAAAAAA";
+	dest[0] = 'B';
+	size_t res = ft_strlcat(dest, src, 0);
+	if (res != 9 || strcmp(dest, "B"))
+		pass = 0;
+	tests__print("test_ft_strlcat_6_size_is_zero", pass);
+}
+
+void test_ft_strlcat_7(void)
+{
+	int pass = 1;
+	char dest[30];
+	memset(dest,'B', 4);
+	char * src = (char *)"AAAAAAAAA";
+	dest[0] = 'B';
+	size_t res = ft_strlcat(dest, src, 3);;
+	if (res != 12 || strcmp(dest, "BBBB"))
+		pass = 0;
+	tests__print("test_ft_strlcat_7", pass);
+}
+
 void	tests_ft_strlcat(void)
 {
 	test_ft_strlcat_1_concat_two_strings_exact_mem();
@@ -75,6 +101,16 @@ void	tests_ft_strlcat(void)
 	test_ft_strlcat_3_concat_two_strings_smaller_mem();
 	test_ft_strlcat_4_concat_to_empty_string();
 	test_ft_strlcat_5_concat_empty_string();
+	test_ft_strlcat_6_size_is_zero();
+	test_ft_strlcat_7();
 
+	char dest[30]; memset(dest, 0, 30);
+	char * src = (char *)"AAAAAAAAA";
+	dest[0] = 'B';
+	size_t res = ft_strlcat(dest, src, 0);
+	printf("len: %ld\ndest: %s\n", res, dest);
 
+	memset(dest, 'C', 5);
+	res = ft_strlcat(dest, src, -1);
+	printf("len: %ld\ndest: %s\n", res, dest);
 }

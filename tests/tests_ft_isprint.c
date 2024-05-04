@@ -13,47 +13,52 @@
 #include "tests.h"
 #include "../ft_isprint.c"
 
-void test_ft_isprint_1_nonprintables(void)
+void test_ft_isprint_1_ascii_0(void)
 {
-	int i;
-	int pass;
-
-	i = -1;
-	pass = 1;
-	while(i++ < 31)
-		if (ft_isprint(i) != isprint(i))
-		{
-			pass = 0;
-			tests__print("test_ft_isprint_1_nonprintables", pass);
-			printf("\t%d\n", i);
-		}
-	if (pass)
-		tests__print("test_ft_isprint_1_nonprintables", pass);
+	int pass = 1;
+	if (ft_isprint(0))
+		pass = 0;
+	tests__print("test_ft_isprint_1_ascii_0", pass);
 }
 
-void test_ft_isprint_2_printables(void)
+void test_ft_isprint_2_ascii_31(void)
 {
-	int i;
-	int pass;
-
-	i = 31;
-	pass = 1;
-	while(i++ < 32)
-		if (!ft_isprint(i))
-		{
-			pass = 0;
-			tests__print("test_ft_isprint_2_printables", pass);
-			printf("\t%d\n", i);
-		}
-	if (pass)
-		tests__print("test_ft_isprint_2_printables", pass);
-
+	int pass = 1;
+	if (ft_isprint(31))
+		pass = 0;
+	tests__print("test_ft_isprint_2_ascii_31", pass);
 }
 
+void test_ft_isprint_3_ascii_127(void)
+{
+	int pass = 1;
+	if (ft_isprint(127))
+		pass = 0;
+	tests__print("test_ft_isprint_3_ascii_127", pass);
+}
+
+void test_ft_isprint_4_ascii_32(void)
+{
+	int pass = 1;
+	if (!ft_isprint(32))
+		pass = 0;
+	tests__print("test_ft_isprint_4_ascii_32", pass);
+}
+
+void test_ft_isprint_5_ascii_126(void)
+{
+	int pass = 1;
+	if (!ft_isprint(126))
+		pass = 0;
+	tests__print("test_ft_isprint_5_ascii_126", pass);
+}
 
 void tests_ft_isprint(void)
 {
-	test_ft_isprint_1_nonprintables();
-	test_ft_isprint_2_printables();
+	test_ft_isprint_1_ascii_0();
+	test_ft_isprint_2_ascii_31();
+	test_ft_isprint_3_ascii_127();
+	test_ft_isprint_4_ascii_32();
+	test_ft_isprint_5_ascii_126();
 }
 

@@ -42,19 +42,22 @@ static int	char_in_set(char a, const char *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trim;
-	char	*t_trim;
-	int		start;
-	int		end;
+	char		*trim;
+	char		*t_trim;
+	size_t		start;
+	size_t		end;
 
 	if (!s1 || !set)
-		return (NULL);
+		return (ft_calloc(0, 0));
 	start = 0;
 	while (char_in_set(s1[start], set))
 		start++;
+	end = 0;
 	end = ft_strlen((char *)s1);
 	while (char_in_set(s1[end - 1], set))
 		end--;
+	if (end < start)
+		return (ft_calloc(0, 0));
 	trim = ft_calloc(end - start + 1, sizeof (char));
 	if (!trim)
 		return (NULL);

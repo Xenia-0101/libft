@@ -13,19 +13,7 @@
 #include "tests.h"
 #include "../ft_substr.c"
 
-/* static int	ft_strcmp(const char *s1, const char *s2)
-{
-	while (*s1)
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
-} */
-
-void test_ft_strdup_1(void)
+void test_ft_substr_1(void)
 {
 	int pass = 1;
 	const char *s = "Hello";
@@ -35,10 +23,10 @@ void test_ft_strdup_1(void)
 
 	if (!sub || ft_strcmp(sub, "Hell"))
 		pass = 0;
-	tests__print("test_ft_strdup_1", pass);
+	tests__print("test_ft_substr_1", pass);
 }
 
-void test_ft_strdup_2(void)
+void test_ft_substr_2(void)
 {
 	int pass = 1;
 	const char *s = "Hello";
@@ -48,10 +36,10 @@ void test_ft_strdup_2(void)
 
 	if (!sub || ft_strcmp(sub, "llo"))
 		pass = 0;
-	tests__print("test_ft_strdup_2", pass);
+	tests__print("test_ft_substr_2", pass);
 }
 
-void test_ft_strdup_3(void)
+void test_ft_substr_3(void)
 {
 	int pass = 1;
 	const char *s = "Hello";
@@ -61,10 +49,10 @@ void test_ft_strdup_3(void)
 
 	if (!sub || ft_strcmp(sub, "llo"))
 		pass = 0;
-	tests__print("test_ft_strdup_3", pass);
+	tests__print("test_ft_substr_3", pass);
 }
 
-void test_ft_strdup_4(void)
+void test_ft_substr_4(void)
 {
 	int pass = 1;
 	const char *s = "Hello";
@@ -74,41 +62,65 @@ void test_ft_strdup_4(void)
 
 	if (!sub || ft_strcmp(sub, "o"))
 		pass = 0;
-	tests__print("test_ft_strdup_4", pass);
+	tests__print("test_ft_substr_4", pass);
 }
 
-void test_ft_strdup_5(void)
+void test_ft_substr_5(void)
 {
 	int pass = 1;
 	const char *s = "Hello";
 	int start = 4;
 	size_t len = 0;
 	char *sub = ft_substr(s, start, len);
-
-	if (sub)
+	if (!sub || ft_strcmp(sub, ""))
 		pass = 0;
-	tests__print("test_ft_strdup_5", pass);
+	tests__print("test_ft_substr_5", pass);
 }
 
-void test_ft_strdup_6(void)
+void test_ft_substr_6(void)
 {
 	int pass = 1;
 	const char *s = "Hello";
 	int start = 5;
 	size_t len = 2;
 	char *sub = ft_substr(s, start, len);
-
-	if (sub)
+	if (!sub || ft_strcmp(sub, ""))
 		pass = 0;
-	tests__print("test_ft_strdup_6", pass);
+	tests__print("test_ft_substr_6", pass);
 }
 
-void tests_ft_strdup(void)
+void test_ft_substr_7(void)
 {
-	test_ft_strdup_1();
-	test_ft_strdup_2();
-	test_ft_strdup_3();
-	test_ft_strdup_4();
-	test_ft_strdup_5();
-	test_ft_strdup_6();
+	int pass = 1;
+	char *sub = ft_substr("tripouille", 0, 42000);
+
+	if (!sub || ft_strcmp(sub, "tripouille"))
+		pass = 0;
+	tests__print("test_ft_substr_7", pass);
+}
+
+void test_ft_substr_8(void)
+{
+	int pass = 1;
+	char *sub = ft_substr("tripouille", 100, 1);
+
+	if (!sub || ft_strcmp(sub, ""))
+		pass = 0;
+	tests__print("test_ft_substr_8", pass);
+}
+
+void tests_ft_substr(void)
+{
+	test_ft_substr_1();
+	test_ft_substr_2();
+	test_ft_substr_3();
+	test_ft_substr_4();
+	test_ft_substr_5();
+	test_ft_substr_6();
+	test_ft_substr_7();
+	test_ft_substr_8();
+
+	char *str = strdup("0123456789");
+	char *s = ft_substr(str, 9, 10);
+	printf("str:\t%s\nsubstr: \t%s\n", str, s);
 }

@@ -13,18 +13,6 @@
 #include "tests.h"
 #include "../ft_strnstr.c"
 
-/* static int	ft_strcmp(const char *s1, const char *s2)
-{
-	while (*s1)
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
-} */
-
 void test_ft_strnstr_1(void)
 {
 	int pass = 1;
@@ -150,13 +138,35 @@ void test_ft_strnstr_10(void)
 	tests__print("test_ft_strnstr_10", pass);
 }
 
+void test_ft_strnstr_12(void)
+{
+	int pass = 1;
+	char * empty = (char*)"";
+	const char *res = ft_strnstr(empty, "", -1);
+
+	if (!res || ft_strcmp(empty, res))
+		pass = 0;
+	tests__print("test_ft_strnstr_12", pass);
+}
+
+void test_ft_strnstr_13(void)
+{
+	int pass = 1;
+	char haystack[30] = "aaabcabcd";
+	const char *res = ft_strnstr(haystack, "abcd", 9);
+
+	if (!res || ft_strcmp(res, haystack + 5))
+		pass = 0;
+	tests__print("test_ft_strnstr_13", pass);
+}
+
 void test_ft_strnstr_11(void)
 {
 	int pass = 1;
 	const char *big = "Lorem ipsum dolor sit amet";
 	const char *little = "dolor";
 	const char *exp = "dolor sit amet";
-	const char *res = ft_strnstr(big, little, 17);
+	const char *res = ft_strnstr(big, little, 18);
 
 	if (!res || ft_strcmp(exp, res))
 		pass = 0;
@@ -176,5 +186,7 @@ void tests_ft_strnstr(void)
 	test_ft_strnstr_9();
 	test_ft_strnstr_10();
 	test_ft_strnstr_11();
+	test_ft_strnstr_12();
+	test_ft_strnstr_13();
 }
 

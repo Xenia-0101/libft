@@ -82,6 +82,20 @@ void test_ft_memcmp_5_empty_2(void)
 	tests__print("test_ft_memcmp_5_empty_2", passed);
 }
 
+void test_ft_memcmp_6_zeros(void)
+{
+	int passed = 1;
+	char s1[] = {0, 0, 127, 0};
+	char s2[] = {0, 0, 42, 0};
+
+	int res = ft_memcmp(s1, s2, 5);
+	int t_res = memcmp(s1, s2, 5);
+	passed = 1;
+	if (res != t_res)
+		passed = 0;
+	tests__print("test_ft_memcmp_6_zeros", passed);
+}
+
 void	tests_ft_memcmp(void)
 {
 	test_ft_memcmp_1_equal();
@@ -89,4 +103,10 @@ void	tests_ft_memcmp(void)
 	test_ft_memcmp_3_lower();
 	test_ft_memcmp_4_empty_1();
 	test_ft_memcmp_5_empty_2();
+	test_ft_memcmp_6_zeros();
+	
+	char s[] = {-128, 0, 127, 0};
+	char sCpy[] = {-128, 0, 127, 0};
+	int res = ft_memcmp(s, sCpy, 4);
+	printf("res: %d\n", res);
 }
