@@ -102,10 +102,15 @@ char	**ft_split(char const *s, char c)
 	int	word_count;
 	char	**res;
 
+	if (!*s)
+	{
+		res = ft_calloc(1, sizeof (char *));
+		return (res);
+	}
 	word_count = count_words(s, c);
 	if (word_count == -1)
 	{
-		res = ft_calloc(0, 0);
+		res = ft_calloc(1, sizeof (char *));
 		return (res);
 	}
 	res = ft_calloc(sizeof (char *), word_count + 1);

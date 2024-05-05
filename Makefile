@@ -72,7 +72,8 @@ fclean: clean
 
 re: fclean all
 
-bonus: ${OBJS_BONUS}
+b: ${OBJS_BONUS}
 	${LIBC} ${NAME} ${OBJS_BONUS}
 
+bonus: b clean
 

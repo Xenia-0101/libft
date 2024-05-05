@@ -13,7 +13,7 @@
 #include "tests.h"
 #include "../ft_split.c"
 
-void test_ft_split(void)
+void test_ft_split_1(void)
 {
 	char **tab = ft_split("  tripouille  42  ", ' ');
 	int i = 0;
@@ -24,7 +24,7 @@ void test_ft_split(void)
 	}
 }
 
-void test_ft_split(void)
+void test_ft_split_2(void)
 {
 	char **tab = ft_split("     ", ' ');
 	int i = 0;
@@ -37,6 +37,7 @@ void test_ft_split(void)
 
 void tests_ft_split(void)
 {
-	test_ft_split();
+	test_ft_split_1();
+	test_ft_split_2();
 
 }
