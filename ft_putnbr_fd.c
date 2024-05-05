@@ -28,9 +28,9 @@
 
 #include "libft.h"
 
-static void ft_putnbr(int n, int fd)
+static void	ft_putnbr(int n, int fd)
 {
-	char c;
+	char	c;
 
 	if (n > 0)
 	{

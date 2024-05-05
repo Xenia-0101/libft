@@ -20,7 +20,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *temp;
+	char	*temp;
 
 	temp = (char *)s;
 	while (n-- > 0)

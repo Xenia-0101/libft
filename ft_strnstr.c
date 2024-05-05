@@ -21,9 +21,9 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
-	size_t len;
-	size_t t_n;
-	size_t counter;
+	size_t	len;
+	size_t	t_n;
+	size_t	counter;
 
 	if (!*little)
 		return ((char *)big);
@@ -42,31 +42,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	}
 	return (NULL);
 }
-/*
-char	*ft_strnstr(const char *big, const char *little, size_t n)
-{
-	const char	*b;
-	const char	*l;
-
-	if (!*little)
-		return ((char *)big);
-	l = little;
-	while (*big && n-- > 0)
-	{
-		b = big;
-		if (*big == *l)
-		{
-			while (*big++ == *l++)
-			{
-				if (!*l)
-					return ((char *)b);
-				if (n-- == 0)
-					return (NULL);
-			}
-			l = little;
-		}
-		else
-			big++;
-	}
-	return (NULL);
-} */

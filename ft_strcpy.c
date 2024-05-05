@@ -12,9 +12,10 @@
 
 /*
 	DESCRIPTION
-		The strcpy() function copies the string pointed to by src, including the terminating null byte ('\0'), to the
-		buffer pointed to by dest. The strings may not overlap, and the destination string dest must be large enough
-		to receive the copy. Beware of buffer overruns!
+		The strcpy() function copies the string pointed to by src, including
+		the terminating null byte ('\0'), to the buffer pointed to by dest.
+		The strings may not overlap, and the destination string dest must be
+		large enough to receive the copy. Beware of buffer overruns!
 	RETURN VALUE
 		strncpy() functions return a pointer to the destination string dest.
 */
@@ -23,7 +24,7 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	char *t_dest;
+	char	*t_dest;
 
 	t_dest = dest;
 	while (*src)

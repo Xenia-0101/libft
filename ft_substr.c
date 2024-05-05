@@ -36,14 +36,14 @@ Description
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *sub;
+	char	*sub;
 
 	if (len == 0 || ft_strlen((char *)s) < (int)start + 1)
 		return (ft_calloc(0, 0));
-	if (len > (size_t )ft_strlen((char *)(s + start)))
-		len = (size_t )ft_strlen((char *)(s + start));
+	if (len > (size_t)ft_strlen((char *)(s + start)))
+		len = (size_t)ft_strlen((char *)(s + start));
 	sub = malloc(sizeof (char) * len + 1);
 	if (!sub)
 		return (NULL);
@@ -51,4 +51,3 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	ft_memcpy(sub, s + start, len);
 	return (sub);
 }
-

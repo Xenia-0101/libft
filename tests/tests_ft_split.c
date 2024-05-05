@@ -16,32 +16,27 @@
 void test_ft_split(void)
 {
 	char **tab = ft_split("  tripouille  42  ", ' ');
-	printf("%s\n", tab[0]);
-	// while (**tab)
-	// {
-	// 	printf("%s\n", *tab++);
-	// }
+	int i = 0;
+	while (tab[i])
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
 }
+
+void test_ft_split(void)
+{
+	char **tab = ft_split("     ", ' ');
+	int i = 0;
+	while (tab[i])
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
+}
+
 void tests_ft_split(void)
 {
-	const char *s = "aa bbb cccc";
-	char c = ' ';
-	char **res = ft_split(s, c);
-
-	printf("%s", res[0]);
-	printf("%s", res[1]);
-	printf("%s\n", res[2]);
 	test_ft_split();
 
-/* 	const char *s = "aa bbb cccc";
-	char c = 'x';
-	char **res = ft_split(s, c);
-
-	printf("%s\n", res[0]); */
-
-	// const char *s = " ";
-	// char c = 'x';
-	// char **res = ft_split(s, c);
-
-	// printf("%s\n", res[0]);
 }

@@ -31,7 +31,7 @@
 
 static int	count_units(int n)
 {
-	int units;
+	int	units;
 
 	units = 0;
 	if (n < 0)
@@ -47,9 +47,9 @@ static int	count_units(int n)
 	return (units);
 }
 
-static char *min_number(void)
+static char	*min_number(void)
 {
-	char *res;
+	char	*res;
 
 	res = ft_calloc(12, sizeof (char));
 	if (!res)
@@ -70,8 +70,8 @@ static char *min_number(void)
 
 char	*ft_itoa(int n)
 {
-	int units;
-	char *res;
+	int		units;
+	char	*res;
 
 	if (n == 0)
 	{

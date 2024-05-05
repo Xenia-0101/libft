@@ -41,6 +41,6 @@ int	ft_atoi(const char *nptr)
 
 static int	ft_isspace(int c)
 {
-	return ((c == '\f') | (c == '\n') | (c == '\r') |
-			(c == '\t') | (c == '\v') | (c == ' '));
+	return ((c == '\f') | (c == '\n') | (c == '\r')
+		| (c == '\t') | (c == '\v') | (c == ' '));
 }

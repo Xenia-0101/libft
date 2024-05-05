@@ -36,8 +36,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*s_map;
-	int	i;
+	char	*s_map;
+	int		i;
 
 	s_map = ft_calloc(ft_strlen((char *)s) + 1, sizeof (char));
 	if (!s_map)

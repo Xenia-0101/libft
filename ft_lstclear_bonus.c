@@ -32,13 +32,12 @@
 
 #include "libft.h"
 
-static void ft_lstrec(t_list **lst, void (*del)(void*))
+static void	ft_lstrec(t_list **lst, void (*del)(void*))
 {
 	printf("\t\t %s\n", (char *)(*lst)->content);
 	if ((*lst)->next)
 		ft_lstrec(&(*lst)->next, del);
 	del((*lst)->content);
-
 	free(*lst);
 	*lst = NULL;
 }
@@ -47,8 +46,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	if (!del)
 		return ;
-	printf("Del function exists.\n");
-	printf("Content of the first node: %s\n", (char *)(*lst)->content);
+	// printf("Del function exists.\n");
+	// printf("Content of the first node: %s\n", (char *)(*lst)->content);
 	ft_lstrec(lst, del);
 	return ;
 }

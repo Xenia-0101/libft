@@ -28,8 +28,8 @@ RETURN VALUE
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char *temp_d;
-	const char *temp_s;
+	char		*temp_d;
+	const char	*temp_s;
 
 	temp_d = (char *)dest;
 	temp_s = (const char *)src;

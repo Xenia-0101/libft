@@ -39,7 +39,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		ft_lstadd_back(&(*lst)->next, new);
 	}
-	else{
+	else
+	{
 		(*lst)->next = new;
 	}
 }
