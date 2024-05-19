@@ -24,19 +24,21 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 	size_t	len;
 	size_t	t_n;
 	size_t	counter;
+	int		i;
 
 	if (!*little)
 		return ((char *)big);
 	len = ft_strlen((char *)little);
 	t_n = n;
 	counter = 0;
-	while (*big && n-- > 0)
+	i = 0;
+	while (big[i] && n-- > 0)
 	{
-		if ((!ft_strncmp(little, big, len)) && !(counter + len > t_n))
-			return ((char *)big);
+		if ((!ft_strncmp(little, (big + i), len)) && !(counter + len > t_n))
+			return ((char *)(big + i));
 		else
 		{
-			big++;
+			i++;
 			counter++;
 		}
 	}

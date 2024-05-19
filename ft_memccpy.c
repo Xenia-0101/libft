@@ -30,16 +30,21 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
 	char		*temp_d;
 	const char	*temp_s;
+	int			i;
 
 	temp_d = (char *)dest;
 	temp_s = (const char *)src;
+	i = 0;
+
 	while (n-- > 0)
 	{
-		*temp_d = *temp_s;
-		if (*temp_s == c)
-			return (temp_d++);
-		temp_d++;
-		temp_s++;
+		temp_d[i] = temp_s[i];
+		if (temp_s[i] == c)
+		{
+			i++;
+			return (temp_d + i);
+		}
+		i++;
 	}
 	return (NULL);
 }

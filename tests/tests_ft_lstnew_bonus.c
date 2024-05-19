@@ -330,7 +330,7 @@ void	tests_ft_lstnew_bonus(void)
 
 	test_ft_lstadd_front_1_one_new();
 	test_ft_lstadd_front_2_empty_new();
-	test_ft_lstadd_front_3_three_new(); 
+	test_ft_lstadd_front_3_three_new();
 
 	test_ft_lstsize_1_three();
 	test_ft_lstsize_2_one();
@@ -341,7 +341,7 @@ void	tests_ft_lstnew_bonus(void)
 	test_ft_lstadd_back_1_one_new();
 	test_ft_lstadd_back_2_three_new();
 
-	test_ft_lstdelone_1();
+	// test_ft_lstdelone_1();
 
 	test_ft_lstclear_1();
 

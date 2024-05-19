@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*
-DESCRIPTION
+DESCRIPTION 
 	The memchr() function scans the initial n bytes of the memory area pointed
 	to by s for the first instance of c. Both c and the bytes of the memory area
 	pointed to by s are interpreted as unsigned char.
@@ -26,15 +26,17 @@ RETURN VALUE
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*src;
+	int 				i;
 
+	i = 0;
 	if (n != 0)
 	{
 		src = (const unsigned char *)s;
 		while (n-- != 0)
 		{
-			if (*src++ == (char )c)
+			if (src[i++] == (char )c)
 			{
-				return ((void *)(src - 1));
+				return ((void *)(src + i - 1));
 			}
 		}
 	}

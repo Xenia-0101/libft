@@ -27,17 +27,24 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	d_len;
 	size_t	s_len;
-	int		to_copy;
+	size_t	to_copy;
+	int		i;
 
 	s_len = ft_strlen((char *)src);
 	d_len = ft_strlen(dest);
-	if (d_len > size)
+	if (d_len >= size)
 		return (s_len + size);
 	to_copy = size - d_len - 1;
-	while (*dest)
-		dest++;
-	while (*src && (to_copy-- > 0))
-		*dest++ = *src++;
-	*dest = '\0';
+	i = 0;
+	while (dest[i])
+		i++;
+	dest = dest + i;
+	i = 0;
+	while (src[i] && (to_copy-- != 0))
+	{
+		*(dest + i) = src[i];
+		i++;
+	}
+	*(dest + i) = '\0';
 	return (d_len + s_len);
 }

@@ -24,5 +24,5 @@ void	ft_bzero(void *s, size_t n)
 
 	temp = (char *)s;
 	while (n-- > 0)
-		*temp++ = '\0';
+		temp[n] = '\0';
 }

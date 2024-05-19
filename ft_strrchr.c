@@ -25,30 +25,22 @@ RETURN VALUE
 
 #include "libft.h"
 
-static int	fft_strlen(char *str);
 
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*t_s;
+	int			i;
 
 	t_s = NULL;
+	i = 0;
 	if (c == '\0')
-		return ((char *)s + fft_strlen((char *)s));
-	while (*s)
+		return ((char *)s + ft_strlen((char *)s));
+	while (s[i])
 	{
-		if (*s == (char )c)
-			t_s = s;
-		s++;
+		if (s[i] == (char )c)
+			t_s = s + i;
+		i++;
 	}
 	return ((char *)t_s);
 }
 
-static int	fft_strlen(char *str)
-{
-	int	count;
-
-	count = 0;
-	while (*str++)
-		count++;
-	return (count);
-}

@@ -33,15 +33,16 @@ NOTES
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	char	*t_dest;
+	int	i;
 
-	t_dest = dest;
+	i = 0;
 	while (n-- > 0)
 	{
-		if (*src)
-			*t_dest++ = *src++;
+		if (src[i])
+			dest[i] = src[i];
 		else
-			*t_dest++ = '\0';
+			dest[i] = '\0';
+		i++;
 	}
 	return (dest);
 }

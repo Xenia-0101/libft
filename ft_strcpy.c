@@ -24,11 +24,14 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	char	*t_dest;
+	int	i;
 
-	t_dest = dest;
-	while (*src)
-		*t_dest++ = *src++;
-	*t_dest = '\0';
+	i = 0;
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
 	return (dest);
 }

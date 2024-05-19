@@ -73,11 +73,28 @@ void test_ft_strncmp_5_empty_2(void)
 	tests__print("test_ft_strncmp_5_empty_2", passed);
 }
 
+void test_ft_strncmp_6(void)
+{
+	int res;
+	int passed;
+
+	res = ft_strncmp("test\200", "test\0", 6);
+	passed = 1;
+	printf("res: %d, exp: %d\n", res, strncmp("test\200", "test\0", 6));
+	if (res != strncmp("test\200", "test\0", 6))
+		passed = 0;
+	tests__print("test_ft_strncmp_6", passed);
+}
+
 void tests_ft_strncmp(void)
 {
 	test_ft_strncmp_1_equal();
 	test_ft_strncmp_2_larger();
 	test_ft_strncmp_3_lower();
 	test_ft_strncmp_4_empty_1();
-	test_ft_strncmp_5_empty_2(); 
+	test_ft_strncmp_5_empty_2();
+	test_ft_strncmp_6();
+
+
+
 }

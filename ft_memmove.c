@@ -26,9 +26,28 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	temp[50];
+	char	*t_src;
+	char	*t_dest;
+	size_t	i;
 
-	ft_memcpy(temp, src, n);
-	ft_memcpy(dest, temp, n);
+	t_src = (char *)src;
+	t_dest = (char *)dest;
+	if (t_dest < t_src)
+	{
+		i = 0;
+		while (i < n)
+		{
+			t_dest[i] = t_src[i];
+			i++;
+		}
+	}
+	else
+	{
+		i = n;
+		while (i-- != 0)
+		{
+			t_dest[i] = t_src[i];
+		}
+	}
 	return (dest);
 }
