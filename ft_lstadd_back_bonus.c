@@ -31,16 +31,31 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*t_lst;
+
 	if (!new)
 		return ;
-	if (!(*lst))
+	if (!*lst)
+	{
+		*lst = new;
 		return ;
-	if ((*lst)->next)
-	{
-		ft_lstadd_back(&(*lst)->next, new);
 	}
-	else
-	{
-		(*lst)->next = new;
-	}
+	t_lst = ft_lstlast(*lst);
+	t_lst->next = new;
 }
+
+/* void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*tmp;
+
+	if (!new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	tmp = ft_lstlast(*lst);
+	tmp->next = new;
+}
+ */

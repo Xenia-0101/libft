@@ -15,4 +15,7 @@ void test_ft_memcpy(void) {
 void tests_ft_memcpy(void) {
 	printf("tests for memcpy not finished\n");
 	test_ft_memcpy();
+	char *s1 = NULL;
+	char *s2 = NULL;
+	printf("\n%s\n", (char *)memcpy(s1, s2, 8));
 }

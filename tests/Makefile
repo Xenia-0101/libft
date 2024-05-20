@@ -51,7 +51,7 @@ OBJS = ${SRCS:.c=.o}
 ${NAME}: ${OBJS}
 	${CC} -o ${NAME} ${OBJS}
 
-all: ${NAME} clean
+all: ${NAME}
 
 .c.o: ${SRCS}
 	${CC} ${CCFLAGS} -c $< -o ${<:.c=.o} -I includes

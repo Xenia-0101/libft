@@ -105,8 +105,8 @@ void test_ft_memchr_8(void)
 {
 	// int pass = 1;
 	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
-	int *t_tab = (int *)ft_memchr(tab, -1, 7);
-	printf("res: >>%ls<<\texp: >>%ls<<\n\n", t_tab, (int *)memchr(tab, -1, 7));
+	char *t_tab = (char *)ft_memchr(tab, -1, 7);
+	printf("res: >>%s<<\texp: >>%s<<\n\n", t_tab, (char *)memchr(tab, -1, 7));
 
 	// tests__print("test_ft_memchr_8", pass);
 }
@@ -119,6 +119,6 @@ void tests_ft_memchr(void)
 	test_ft_memchr_4();
 	test_ft_memchr_5();
 	test_ft_memchr_6();
+	test_ft_memchr_8();
 	test_ft_memchr_7();
-	// test_ft_memchr_8();
 }

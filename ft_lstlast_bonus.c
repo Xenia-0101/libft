@@ -27,13 +27,16 @@ Description
 #include "libft.h"
 
 t_list	*ft_lstlast(t_list *lst)
-{ 
-	if (!lst)
+{
+	t_list	*t_lst;
+
+	if (lst == NULL)
 		return (NULL);
-	if (lst->next)
+	t_lst = lst;
+	while (t_lst->next != NULL)
 	{
-		while (lst->next)
-			*lst = *lst->next;
+		t_lst = t_lst->next;
 	}
-	return (lst);
+	return (t_lst);
 }
+

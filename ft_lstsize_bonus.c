@@ -28,17 +28,19 @@ Description
 
 int	ft_lstsize(t_list *lst)
 {
-	int	count;
+	int		count;
+	t_list	*t_lst;
 
 	count = 0;
-	if (!lst)
+	if (!lst || !lst->content)
 		return (count);
-	if (lst->content)
+	else
 		count++;
-	while (lst->next)
+	t_lst = lst;
+	while (t_lst->next)
 	{
 		count++;
-		*lst = *lst->next;
+		t_lst = t_lst->next;
 	}
 	return (count);
 }

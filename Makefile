@@ -14,7 +14,6 @@ ft_isascii.c \
 ft_isdigit.c \
 ft_isprint.c \
 ft_itoa.c \
-ft_memccpy.c \
 ft_memchr.c \
 ft_memcmp.c \
 ft_memcpy.c \
@@ -26,8 +25,6 @@ ft_putnbr_fd.c \
 ft_putstr_fd.c \
 ft_split.c \
 ft_strchr.c \
-ft_strcmp.c \
-ft_strcpy.c \
 ft_strdup.c \
 ft_striteri.c \
 ft_strjoin.c \
@@ -35,8 +32,6 @@ ft_strlcat.c \
 ft_strlcpy.c \
 ft_strlen.c \
 ft_strmapi.c \
-ft_strncmp.c \
-ft_strncpy.c \
 ft_strnstr.c \
 ft_strrchr.c \
 ft_strtrim.c \
@@ -59,7 +54,7 @@ ft_lstsize_bonus.c \
 OBJS = ${SRCS:.c=.o}
 OBJS_BONUS = ${SRCS_BONUS:.c=.o}
 
-all: ${NAME} clean
+all: ${NAME}
 
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}
@@ -72,8 +67,9 @@ fclean: clean
 
 re: fclean all
 
-b: ${OBJS_BONUS}
+bonus: ${OBJS_BONUS}
 	${LIBC} ${NAME} ${OBJS_BONUS}
 
-bonus: b clean
-
+so:
+	$(CC) -nostartfiles -fPIC $(CCFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
