@@ -33,26 +33,22 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*join;
-	char	*t_join;
-	int		s1_len;
-	int		s2_len;
+	int		len;
 	int		i;
 	int		j;
 
-	s1_len = ft_strlen((char *)s1);
-	s2_len = ft_strlen((char *)s2);
-	join = ft_calloc(s1_len + s2_len + 1, sizeof (char));
+	len = ft_strlen((char *)s1) + ft_strlen((char *)s2);
+	join = ft_calloc(len + 1, sizeof (char));
 	if (!join)
 		return (NULL);
-	t_join = join;
 	i = 0;
 	while (s1[i])
 	{
-		t_join[i] = s1[i];
+		join[i] = s1[i];
 		i++;
 	}
 	j = 0;
 	while (s2[j])
-		t_join[i++] = s2[j++];
+		join[i++] = s2[j++];
 	return (join);
 }

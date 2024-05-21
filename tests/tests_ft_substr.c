@@ -21,7 +21,7 @@ void test_ft_substr_1(void)
 	size_t len = 4;
 	char *sub = ft_substr(s, start, len);
 
-	if (!sub || ft_strcmp(sub, "Hell"))
+	if (!sub || strcmp(sub, "Hell"))
 		pass = 0;
 	tests__print("test_ft_substr_1", pass);
 }
@@ -34,7 +34,7 @@ void test_ft_substr_2(void)
 	size_t len = 3;
 	char *sub = ft_substr(s, start, len);
 
-	if (!sub || ft_strcmp(sub, "llo"))
+	if (!sub || strcmp(sub, "llo"))
 		pass = 0;
 	tests__print("test_ft_substr_2", pass);
 }
@@ -47,7 +47,7 @@ void test_ft_substr_3(void)
 	size_t len = 5;
 	char *sub = ft_substr(s, start, len);
 
-	if (!sub || ft_strcmp(sub, "llo"))
+	if (!sub || strcmp(sub, "llo"))
 		pass = 0;
 	tests__print("test_ft_substr_3", pass);
 }
@@ -60,7 +60,7 @@ void test_ft_substr_4(void)
 	size_t len = 5;
 	char *sub = ft_substr(s, start, len);
 
-	if (!sub || ft_strcmp(sub, "o"))
+	if (!sub || strcmp(sub, "o"))
 		pass = 0;
 	tests__print("test_ft_substr_4", pass);
 }
@@ -72,7 +72,7 @@ void test_ft_substr_5(void)
 	int start = 4;
 	size_t len = 0;
 	char *sub = ft_substr(s, start, len);
-	if (!sub || ft_strcmp(sub, ""))
+	if (!sub || strcmp(sub, ""))
 		pass = 0;
 	tests__print("test_ft_substr_5", pass);
 }
@@ -84,7 +84,7 @@ void test_ft_substr_6(void)
 	int start = 5;
 	size_t len = 2;
 	char *sub = ft_substr(s, start, len);
-	if (!sub || ft_strcmp(sub, ""))
+	if (!sub || strcmp(sub, ""))
 		pass = 0;
 	tests__print("test_ft_substr_6", pass);
 }
@@ -94,7 +94,7 @@ void test_ft_substr_7(void)
 	int pass = 1;
 	char *sub = ft_substr("tripouille", 0, 42000);
 
-	if (!sub || ft_strcmp(sub, "tripouille"))
+	if (!sub || strcmp(sub, "tripouille"))
 		pass = 0;
 	tests__print("test_ft_substr_7", pass);
 }
@@ -104,7 +104,7 @@ void test_ft_substr_8(void)
 	int pass = 1;
 	char *sub = ft_substr("tripouille", 100, 1);
 
-	if (!sub || ft_strcmp(sub, ""))
+	if (!sub || strcmp(sub, ""))
 		pass = 0;
 	tests__print("test_ft_substr_8", pass);
 }

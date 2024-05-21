@@ -31,7 +31,7 @@ void test_ft_memchr_1(void)
 	char *str = "hello there";
 	char c = 't';
 	char *t_str = ft_memchr(str, c, 11);
-	if (ft_strcmp(t_str, memchr(str, c, 11)))
+	if (strcmp(t_str, memchr(str, c, 11)))
 		pass = 0;
 	tests__print("test_ft_memchr_1", pass);
 }
@@ -53,7 +53,7 @@ void test_ft_memchr_3(void)
 	char *str = "hello there!";
 	char c = '!';
 	char *t_str = ft_memchr(str, c, 12);
-	if (ft_strcmp(t_str, memchr(str, c, 12)))
+	if (strcmp(t_str, memchr(str, c, 12)))
 		pass = 0;
 	tests__print("test_ft_memchr_3", pass);
 }
@@ -64,7 +64,7 @@ void test_ft_memchr_4(void)
 	char *str = "*hello there!";
 	char c = '*';
 	char *t_str = ft_memchr(str, c, 13);
-	if (ft_strcmp(t_str, memchr(str, c, 13)))
+	if (strcmp(t_str, memchr(str, c, 13)))
 		pass = 0;
 	tests__print("test_ft_memchr_4", pass);
 }
@@ -75,7 +75,7 @@ void test_ft_memchr_5(void)
 	char *str = "*hello there!";
 	char c = 'l';
 	char *t_str = ft_memchr(str, c, 13);
-	if (ft_strcmp(t_str, memchr(str, c, 13)))
+	if (strcmp(t_str, memchr(str, c, 13)))
 		pass = 0;
 	tests__print("test_ft_memchr_5", pass);
 }
@@ -96,7 +96,7 @@ void test_ft_memchr_7(void)
 	int pass = 1;
 	char str[] = {0, 1, 2 ,3 ,4 ,5};
 	char *t_str = ft_memchr(str, 2 + 256, 3);
-	if (ft_strcmp(t_str, memchr(str, 2 + 256, 3)))
+	if (strcmp(t_str, memchr(str, 2 + 256, 3)))
 		pass = 0;
 	tests__print("test_ft_memchr_7", pass);
 }

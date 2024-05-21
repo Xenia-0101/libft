@@ -29,25 +29,16 @@
 
 #include "libft.h"
 
-static int	count_units(int n)
+static void	count_units(int num, int *units)
 {
-	int	units;
-
-	units = 0;
-	if (n < 0)
+	while (num > 0)
 	{
-		n *= -1;
-		units++;
+		num /= 10;
+		(*units)++;
 	}
-	while (n > 0)
-	{
-		units++;
-		n /= 10;
-	}
-	return (units);
 }
 
-static char	*min_number(void)
+static char	*itoa_min_int(void)
 {
 	char	*res;
 
@@ -68,6 +59,31 @@ static char	*min_number(void)
 	return (res);
 }
 
+static char	*itoa_zero(void)
+{
+	char	*res;
+
+	res = ft_calloc(2, sizeof (char));
+	if (!res)
+		return (NULL);
+	res[0] = '0';
+	return (res);
+}
+
+static void	itoa_num(int num, int units, char **res)
+{
+	while (num > 0)
+	{
+		res[0][units - 1] = num % 10 + '0';
+		num /= 10;
+		units--;
+	}
+	if (units)
+	{
+		res[0][0] = '-';
+	}
+}
+
 char	*ft_itoa(int n)
 {
 	int		units;
@@ -75,27 +91,22 @@ char	*ft_itoa(int n)
 
 	if (n == 0)
 	{
-		res = ft_calloc(2, sizeof (char));
-		res[0] = '0';
-		return (res);
+		return (itoa_zero());
 	}
 	if (n == -2147483648)
 	{
-		res = min_number();
-		return (res);
+		return (itoa_min_int());
 	}
-	units = count_units(n);
+	units = 0;
 	if (n < 0)
+	{
+		units++;
 		n *= -1;
+	}
+	count_units(n, &units);
 	res = ft_calloc(units + 1, sizeof (char));
 	if (!res)
 		return (NULL);
-	while (n > 0)
-	{
-		res[--units] = (n % 10) + '0';
-		n /= 10;
-	}
-	if (units)
-		res[--units] = '-';
+	itoa_num(n, units, &res);
 	return (res);
 }

@@ -69,21 +69,22 @@ void	all_cpy_word(char **res, const char *s, char c, size_t count)
 {
 	char	*w_start;
 	int		w_len;
-	size_t	i;
+	size_t	i;	// count words
+	int		j; // count s len
 
 	i = 0;
+	j = 0;
 	while (i < count)
 	{
-		while (*s && *s == c)
-			s++;
+		while (s[j] && s[j] == c)
+			j++;
 		w_start = (char *)s;
-		w_len = 0;
-		while (*s && *s != c)
+		w_len = j;
+		while (s[j] && s[j] != c)
 		{
-			w_len++;
-			s++;
+			j++;
 		}
-		*(res + i) = ft_calloc(w_len + 1, sizeof (char));
+		*(res + i) = ft_calloc(j - w_len + 1, sizeof (char));
 		if (!(res + i))
 		{
 			free_arr(res, count);
@@ -92,26 +93,22 @@ void	all_cpy_word(char **res, const char *s, char c, size_t count)
 		i++;
 	}
 	if (!(res + i))
-		{
-			free_arr(res, count);
-		}
+		free_arr(res, count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int	word_count;
+	int		word_count;
 	char	**res;
 
 	if (!*s)
 	{
-		res = ft_calloc(1, sizeof (char *));
-		return (res);
+		return (ft_calloc(1, sizeof (char *)));
 	}
 	word_count = count_words(s, c);
 	if (word_count == -1)
 	{
-		res = ft_calloc(1, sizeof (char *));
-		return (res);
+		return (ft_calloc(1, sizeof (char *)));
 	}
 	res = ft_calloc(sizeof (char *), word_count + 1);
 	if (!res)

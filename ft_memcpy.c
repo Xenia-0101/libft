@@ -25,10 +25,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char	*temp_d;
 	char	*temp_s;
-	int		i;
+	size_t	i;
 
-	temp_d = (unsigned char *)dest;
-	temp_s = (unsigned char *)src;
+	temp_d = dest;
+	temp_s = (char *)src;
 	i = 0;
 	while (i < n)
 	{

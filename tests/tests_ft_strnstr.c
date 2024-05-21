@@ -21,7 +21,7 @@ void test_ft_strnstr_1(void)
 	const char *exp = "with its environment, while for irreversible processes it is not.";
 	const char *res = ft_strnstr(big, little, 120);
 
-	if (!res || ft_strcmp(exp, res))
+	if (!res || strcmp(exp, res))
 		pass = 0;
 	tests__print("test_ft_strnstr_1", pass);
 }
@@ -34,7 +34,7 @@ void test_ft_strnstr_2(void)
 	const char *exp = "For reversible processes the system is in equilibrium with its environment, while for irreversible processes it is not.";
 	const char *res = ft_strnstr(big, little, 120);
 
-	if (!res || ft_strcmp(exp, res))
+	if (!res || strcmp(exp, res))
 		pass = 0;
 	tests__print("test_ft_strnstr_2", pass);
 }
@@ -47,7 +47,7 @@ void test_ft_strnstr_3(void)
 	const char *exp = ".";
 	const char *res = ft_strnstr(big, little, 120);
 
-	if (!res || ft_strcmp(exp, res))
+	if (!res || strcmp(exp, res))
 		pass = 0;
 	tests__print("test_ft_strnstr_3", pass);
 }
@@ -60,7 +60,7 @@ void test_ft_strnstr_4(void)
 	const char *exp = big;
 	const char *res = ft_strnstr(big, little, 120);
 
-	if (!res || ft_strcmp(exp, res))
+	if (!res || strcmp(exp, res))
 		pass = 0;
 	tests__print("test_ft_strnstr_4", pass);
 }
@@ -85,7 +85,7 @@ void test_ft_strnstr_6(void)
 	const char *exp = big;
 	const char *res = ft_strnstr(big, little, 120);
 
-	if (!res || ft_strcmp(exp, res))
+	if (!res || strcmp(exp, res))
 		pass = 0;
 	tests__print("test_ft_strnstr_6", pass);
 }
@@ -121,7 +121,7 @@ void test_ft_strnstr_9(void)
 	const char *little = "Lorem ipsum dolor sit amet";
 	const char *res = ft_strnstr(big, little, 120);
 
-	if (!res || ft_strcmp(big, res))
+	if (!res || strcmp(big, res))
 		pass = 0;
 	tests__print("test_ft_strnstr_9", pass);
 }
@@ -144,7 +144,7 @@ void test_ft_strnstr_12(void)
 	char * empty = (char*)"";
 	const char *res = ft_strnstr(empty, "", -1);
 
-	if (!res || ft_strcmp(empty, res))
+	if (!res || strcmp(empty, res))
 		pass = 0;
 	tests__print("test_ft_strnstr_12", pass);
 }
@@ -155,7 +155,7 @@ void test_ft_strnstr_13(void)
 	char haystack[30] = "aaabcabcd";
 	const char *res = ft_strnstr(haystack, "abcd", 9);
 
-	if (!res || ft_strcmp(res, haystack + 5))
+	if (!res || strcmp(res, haystack + 5))
 		pass = 0;
 	tests__print("test_ft_strnstr_13", pass);
 }
@@ -168,7 +168,7 @@ void test_ft_strnstr_11(void)
 	const char *exp = "dolor sit amet";
 	const char *res = ft_strnstr(big, little, 18);
 
-	if (!res || ft_strcmp(exp, res))
+	if (!res || strcmp(exp, res))
 		pass = 0;
 	tests__print("test_ft_strnstr_11", pass);
 }

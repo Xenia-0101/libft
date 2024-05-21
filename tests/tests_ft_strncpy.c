@@ -33,7 +33,7 @@ void test_ft_strncpy_1(void)
 	char *res = ft_strncpy(dest, src, 3);
 
 	pass = 1;
-	if (ft_strncmp(res, "Helld1", 6))
+	if (strncmp(res, "Helld1", 6))
 		pass = 0;
 	tests__print("test_ft_strncpy_1", pass);
 
@@ -47,7 +47,7 @@ void test_ft_strncpy_2(void)
 	char *res = ft_strncpy(dest, src, 5);
 
 	pass = 1;
-	if (ft_strncmp(res, "Hello1", 6))
+	if (strncmp(res, "Hello1", 6))
 		pass = 0;
 	tests__print("test_ft_strncpy_2", pass);
 
@@ -61,7 +61,7 @@ void test_ft_strncpy_3(void)
 	char *res = ft_strncpy(dest, src, 7);
 
 	pass = 1;
-	if (ft_strncmp(res, "Hello", 6))
+	if (strncmp(res, "Hello", 6))
 		pass = 0;
 	tests__print("test_ft_strncpy_3", pass);
 

@@ -25,7 +25,6 @@ RETURN VALUE
 
 #include "libft.h"
 
-
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*t_s;
@@ -43,4 +42,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return ((char *)t_s);
 }
-

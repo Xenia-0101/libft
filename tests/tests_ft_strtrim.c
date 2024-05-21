@@ -21,7 +21,7 @@ void	test_ft_strtrim_1(void)
 	const char	*exp = "HelloWorld";
 	char		*res = ft_strtrim(s1, set);
 
-	if (!res || ft_strcmp(res, exp))
+	if (!res || strcmp(res, exp))
 		pass = 0;
 	tests__print("test_ft_strtrim_1", pass);
 }
@@ -34,7 +34,7 @@ void	test_ft_strtrim_2(void)
 	const char	*exp = "HelloabWorld";
 	char		*res = ft_strtrim(s1, set);
 
-	if (!res || ft_strcmp(res, exp))
+	if (!res || strcmp(res, exp))
 		pass = 0;
 	tests__print("test_ft_strtrim_2", pass);
 }
@@ -47,7 +47,7 @@ void	test_ft_strtrim_3(void)
 	const char	*exp = "HelloWorld";
 	char		*res = ft_strtrim(s1, set);
 
-	if (!res || ft_strcmp(res, exp))
+	if (!res || strcmp(res, exp))
 		pass = 0;
 	tests__print("test_ft_strtrim_3", pass);
 }
@@ -60,7 +60,7 @@ void	test_ft_strtrim_4(void)
 	const char	*exp = "HelloabWorld";
 	char		*res = ft_strtrim(s1, set);
 
-	if (!res || ft_strcmp(res, exp))
+	if (!res || strcmp(res, exp))
 		pass = 0;
 	tests__print("test_ft_strtrim_4", pass);
 }
@@ -73,7 +73,7 @@ void	test_ft_strtrim_5(void)
 	const char	*exp = "HelloWorld";
 	char		*res = ft_strtrim(s1, set);
 
-	if (!res || ft_strcmp(res, exp))
+	if (!res || strcmp(res, exp))
 		pass = 0;
 	tests__print("test_ft_strtrim_5", pass);
 }
@@ -84,7 +84,7 @@ void	test_ft_strtrim_6(void)
 	const char	*exp = "";
 	char		*res = ft_strtrim("   xxx   xxx", " x");
 
-	if (!res || ft_strcmp(res, exp))
+	if (!res || strcmp(res, exp))
 		pass = 0;
 	tests__print("test_ft_strtrim_6", pass);
 }

@@ -24,7 +24,7 @@ void test_ft_memmove_1(void)
 	memmove(t_dest + 5, t_dest, 5);
 	printf("\nExpected: %s\nGOT: %s\n", t_dest, dest);
 	passed = 1;
-	if (ft_strcmp(dest, t_dest) != 0)
+	if (strcmp(dest, t_dest) != 0)
 		passed = 0;
 	tests__print("test_ft_memmove", passed);
 }
@@ -38,7 +38,7 @@ void test_ft_memmove_2(void)
 	memmove(t_dest, t_dest + 5, 5);
 	printf("\nExpected: %s\nGOT: %s\n", t_dest, dest);
 	passed = 1;
-	if (ft_strcmp(dest, t_dest) != 0)
+	if (strcmp(dest, t_dest) != 0)
 		passed = 0;
 	tests__print("test_ft_memmove", passed);
 }

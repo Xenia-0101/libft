@@ -35,7 +35,6 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	temp_d = (char *)dest;
 	temp_s = (const char *)src;
 	i = 0;
-
 	while (n-- > 0)
 	{
 		temp_d[i] = temp_s[i];
