@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 20:31:06 by xvislock          #+#    #+#             */
-/*   Updated: 2024/04/20 20:31:06 by xvislock         ###   ########.fr       */
+/*   Created: 2024/05/22 18:43:59 by xvislock          #+#    #+#             */
+/*   Updated: 2024/05/22 18:43:59 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 /*
 	Parameters
@@ -65,7 +66,7 @@ static int	count_words(const char *s, char c)
 	return (count + 1);
 }
 
-void	all_cpy_word(char **res, const char *s, char c, size_t count)
+/* void	all_cpy_word(char **res, const char *s, char c, size_t count)
 {
 	char	*w_start;
 	int		w_len;
@@ -94,6 +95,35 @@ void	all_cpy_word(char **res, const char *s, char c, size_t count)
 	}
 	if (!(res + i))
 		free_arr(res, count);
+} */
+
+int	skip_separator(char const *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] && s[i] == c)
+		i++;
+	return (i);
+}
+
+void	ft_split_arr(char **res, char const *s, char c, int count)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	while (j < count)
+	{
+		i = 0;
+		s += skip_separator(s, c);
+		while (s[i] && s[i] != c)
+			i++;
+		res[j] = (char *)ft_calloc(i + 1, sizeof (char));
+		ft_memcpy(res[j], s, i);
+		j++;
+		s += i;
+	}
 }
 
 char	**ft_split(char const *s, char c)
@@ -113,6 +143,6 @@ char	**ft_split(char const *s, char c)
 	res = ft_calloc(sizeof (char *), word_count + 1);
 	if (!res)
 		return (NULL);
-	all_cpy_word(res, s, c, word_count);
+	ft_split_arr(res, s, c, word_count);
 	return (res);
 }

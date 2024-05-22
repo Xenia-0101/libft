@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/20 17:39:59 by xvislock          #+#    #+#             */
-/*   Updated: 2024/04/20 17:39:59 by xvislock         ###   ########.fr       */
+/*   Created: 2024/05/22 18:44:29 by xvislock          #+#    #+#             */
+/*   Updated: 2024/05/22 18:44:29 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 /*
 	The bzero() function erases the data in the n bytes of the memory
