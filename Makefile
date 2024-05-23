@@ -33,12 +33,12 @@ ft_strlcpy.c \
 ft_strlen.c \
 ft_strmapi.c \
 ft_strnstr.c \
+ft_strncmp.c \
 ft_strrchr.c \
 ft_strtrim.c \
 ft_substr.c \
 ft_tolower.c \
 ft_toupper.c \
-main.c \
 
 SRCS_BONUS = \
 ft_lstadd_back_bonus.c \
@@ -70,6 +70,6 @@ re: fclean all
 bonus: ${OBJS_BONUS}
 	${LIBC} ${NAME} ${OBJS_BONUS}
 
-# so:
-# 	$(CC) -nostartfiles -fPIC $(CCFLAGS) $(SRCS)
-# 	gcc -nostartfiles -shared -o libft.so $(OBJS)
+so:
+	$(CC) -nostartfiles -fPIC $(CCFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)

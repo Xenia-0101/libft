@@ -23,25 +23,23 @@ RETURN VALUE
 
 #include "libft.h"
 
-static int	abs_val(int n)
-{
-	if (n < 0)
-		return (n *= -1);
-	return (n);
-}
-
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	const unsigned char	*ss1;
+	const unsigned char	*ss2;
+	int					i;
 
+	ss1 = s1;
+	ss2 = s2;
 	i = 0;
 	if (n != 0)
 	{
-		while (n-- > 0)
+		while (n > 0)
 		{
-			if ((s1[i] != s2[i]) || !s1[i])
-				return (abs_val(s1[i]) - abs_val(s2[i]));
+			if ((ss1[i] != ss2[i]) || !s1[i])
+				return ((ss1[i]) - (ss2[i]));
 			i++;
+			n--;
 		}
 	}
 	return (0);
