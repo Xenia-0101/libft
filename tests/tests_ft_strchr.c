@@ -80,6 +80,30 @@ void	test_ft_strchr_5(void)
 	tests__print("test_ft_strchr_5", pass);
 }
 
+void single_test_strchr(int test_number, char *str, int ch)
+{
+	char *res = ft_strchr(str, ch);
+	char *res_std = strchr(str, ch);
+	printf("%d\tres: \t%s\texp: \t%s\n",test_number, res, res_std);
+
+	return ;
+}
+
+int test_strchr(void)
+{
+	int res = 1;
+
+	single_test_strchr(1,"teste", 't');
+	single_test_strchr(2,"teste", 'e');
+	single_test_strchr(3, "teste", '\0');
+	single_test_strchr(4, "teste", 'a');
+	single_test_strchr(5, "teste", 'e' + 256);
+	single_test_strchr(6, "teste", 1024);
+
+	return res;
+}
+
+
 void	tests_ft_strchr(void)
 {
 	test_ft_strchr_1();
@@ -87,4 +111,5 @@ void	tests_ft_strchr(void)
 	test_ft_strchr_3();
 	test_ft_strchr_4();
 	test_ft_strchr_5();
+	test_strchr();
 }

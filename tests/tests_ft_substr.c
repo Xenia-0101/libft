@@ -109,6 +109,44 @@ void test_ft_substr_8(void)
 	tests__print("test_ft_substr_8", pass);
 }
 
+void test_single_substr(int test_number, char *str, unsigned int start, size_t size, char *expected)
+{
+	char *res = ft_substr(str, start, size);
+	printf("%d\tres: \t%s\texp: \t%s\n", test_number, res, expected);
+}
+
+int test_substr()
+{
+	int res = 1;
+	test_single_substr(1, "", 0, 0, "");
+	test_single_substr(2, "", 0, 1, "");
+	test_single_substr(3, "", 1, 1, "");
+	test_single_substr(4, "hola", -1, 0, "");
+	test_single_substr(5, "hola", 0, -1, "hola");
+	test_single_substr(6, "hola", -1, -1, "");
+	test_single_substr(7, "hola", 0, 0, "");
+	test_single_substr(8, "hola", 0, 1, "h");
+	test_single_substr(9, "hola", 0, 3, "hol");
+	test_single_substr(10, "hola", 0, 4, "hola");
+	test_single_substr(11, "hola", 0, 5, "hola");
+	test_single_substr(12, "hola", 2, 0, "");
+	test_single_substr(13, "hola", 2, 1, "l");
+	test_single_substr(14, "hola", 2, 2, "la");
+	test_single_substr(15, "hola", 2, 3, "la");
+	test_single_substr(16, "hola", 2, 30, "la");
+	test_single_substr(17, "hola", 3, 0, "");
+	test_single_substr(18, "hola", 3, 1, "a");
+	test_single_substr(19, "hola", 3, 2, "a");
+	test_single_substr(20, "hola", 4, 0, "");
+	test_single_substr(21, "hola", 4, 1, "");
+	test_single_substr(22, "hola", 4, 20, "");
+	test_single_substr(23, "hola", 5, 2, "");
+
+	return res;
+}
+
+#define ODD(x) (1 & (x))
+
 void tests_ft_substr(void)
 {
 	test_ft_substr_1();
@@ -123,4 +161,5 @@ void tests_ft_substr(void)
 	char *str = strdup("0123456789");
 	char *s = ft_substr(str, 9, 10);
 	printf("str:\t%s\nsubstr: \t%s\n", str, s);
+	test_substr();
 }

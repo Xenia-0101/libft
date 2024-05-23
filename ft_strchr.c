@@ -27,14 +27,16 @@ functions return a pointer to the terminator.
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	char	cc;
+	int		i;
 
+	cc = c;
 	i = 0;
-	if (c == '\0')
+	if (cc == '\0')
 		return ((char *)s + ft_strlen((char *)s));
 	while (s[i])
 	{
-		if (s[i] == (char )c)
+		if (s[i] == (char )cc)
 			return ((char *)(s + i));
 		i++;
 	}

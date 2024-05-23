@@ -28,15 +28,17 @@ RETURN VALUE
 char	*ft_strrchr(const char *s, int c)
 {
 	const char	*t_s;
+	char		cc;
 	int			i;
 
 	t_s = NULL;
+	cc = c;
 	i = 0;
-	if (c == '\0')
+	if (cc == '\0')
 		return ((char *)s + ft_strlen((char *)s));
 	while (s[i])
 	{
-		if (s[i] == (char )c)
+		if (s[i] == (char )cc)
 			t_s = s + i;
 		i++;
 	}
