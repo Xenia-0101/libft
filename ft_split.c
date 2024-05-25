@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 /*
 	Parameters
 		s: The string to be split.
@@ -65,37 +64,6 @@ static int	count_words(const char *s, char c)
 	}
 	return (count + 1);
 }
-
-/* void	all_cpy_word(char **res, const char *s, char c, size_t count)
-{
-	char	*w_start;
-	int		w_len;
-	size_t	i;	// count words
-	int		j; // count s len
-
-	i = 0;
-	j = 0;
-	while (i < count)
-	{
-		while (s[j] && s[j] == c)
-			j++;
-		w_start = (char *)s;
-		w_len = j;
-		while (s[j] && s[j] != c)
-		{
-			j++;
-		}
-		*(res + i) = ft_calloc(j - w_len + 1, sizeof (char));
-		if (!(res + i))
-		{
-			free_arr(res, count);
-		}
-		ft_memcpy(*(res + i), w_start, w_len);
-		i++;
-	}
-	if (!(res + i))
-		free_arr(res, count);
-} */
 
 int	skip_separator(char const *s, char c)
 {

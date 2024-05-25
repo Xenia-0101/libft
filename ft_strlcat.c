@@ -30,8 +30,11 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	to_copy;
 	int		i;
 
-	s_len = ft_strlen((char *)src);
+	if ((src == NULL && size == 0) ||
+		(dest == NULL && size == 0))
+		return (0);
 	d_len = ft_strlen(dest);
+	s_len = ft_strlen((char *)src);
 	if (d_len >= size)
 		return (s_len + size);
 	to_copy = size - d_len - 1;

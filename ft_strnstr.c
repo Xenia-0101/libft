@@ -19,29 +19,6 @@
 
 #include "libft.h"
 
-// static int	abs_val(int n)
-// {
-// 	if (n < 0)
-// 		return (n *= -1);
-// 	return (n);
-// }
-
-// static int	ft_strncmp(const char *s1, const char *s2, size_t n)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	if (n != 0)
-// 	{
-// 		while (n-- > 0)
-// 		{
-// 			if ((s1[i] != s2[i]) || !s1[i])
-// 				return (abs_val(s1[i]) - abs_val(s2[i]));
-// 			i++;
-// 		}
-// 	}
-// 	return (0);
-// }
 
 char	*ft_strnstr(const char *big, const char *little, size_t n)
 {
@@ -52,6 +29,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t n)
 
 	if (!*little)
 		return ((char *)big);
+	if (big == NULL && n == 0)
+		return ("");
 	len = ft_strlen((char *)little);
 	t_n = n;
 	counter = 0;
