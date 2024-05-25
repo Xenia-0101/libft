@@ -33,7 +33,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	if (!f)
 		return ;
-	if (!lst->content)
+	if (!lst || !lst->content)
 		return ;
 	if (lst->next)
 		ft_lstiter(lst->next, f);

@@ -146,13 +146,5 @@ void	tests_ft_strlcat(void)
 	test_ft_strlcat_8();
 	test_ft_strlcat_9_misc();
 
-	char dest[30]; memset(dest, 0, 30);
-	// char * src = (char *)"AAAAAAAAA";
-	size_t res;
-
-
-	memset(dest, 'B', 4);
-	res = ft_strlcat(dest, NULL, 3);
-	printf("\nExp:\t>BBBBCAAAAAAAAA<>12<\nGot:\t>%s<>%ld<", dest, res);
 }
 

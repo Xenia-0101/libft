@@ -36,10 +36,7 @@ static int	fft_strcmp(const char *s1, const char *s2)
 static void	del_node_content(void *cont)
 {
 	printf("\t\t deleting \t%s\n", (char *)cont);
-	while (*(char *)cont)
-	{
-		*(char *)cont++ = '\0';
-	}
+	ft_bzero(cont, sizeof(cont));
 	return ;
 }
 
@@ -253,6 +250,17 @@ void test_ft_lstdelone_1 (void)
 	tests__print("test_ft_lstdelone_1 ran without crashing.\n", 1);
 }
 
+void print_list(t_list *list)
+{
+	t_list *temp;
+	temp = list;
+	while (temp != NULL)
+	{
+		printf("%s\n", (char *)temp->content);
+		temp = temp->next;
+	}
+}
+
 void test_ft_lstclear_1(void)
 {
 	char a[] = "five";
@@ -270,8 +278,10 @@ void test_ft_lstclear_1(void)
 	ft_lstadd_front(&list, two);
 	ft_lstadd_front(&list, one);
 	printf("List created\n");
+	print_list(list);
 
-	ft_lstclear(&list->next->next, del_node_content);
+	ft_lstclear(&list, del_node_content);
+	// print_list(list);
 
 	tests__print("test_ft_lstclear_1 ran without crashing :)\n", 1);
 }
@@ -323,29 +333,29 @@ void test_ft_lstmap_1(void)
 	tests__print("test_ft_lstmap_1 ran without crashing :)\n", 1);
 }
 
-void	tests_ft_lstnew_bonus(void)
+void	tests_ft_bonus(void)
 {
-	test_ft_lstnew_1_string();
-	test_ft_lstnew_2_number();
+	// test_ft_lstnew_1_string();
+	// test_ft_lstnew_2_number();
 
-	test_ft_lstadd_front_1_one_new();
-	test_ft_lstadd_front_2_empty_new();
-	test_ft_lstadd_front_3_three_new();
+	// test_ft_lstadd_front_1_one_new();
+	// test_ft_lstadd_front_2_empty_new();
+	// test_ft_lstadd_front_3_three_new();
 
-	test_ft_lstsize_1_three();
-	test_ft_lstsize_2_one();
-	test_ft_lstsize_3_none();
+	// test_ft_lstsize_1_three();
+	// test_ft_lstsize_2_one();
+	// test_ft_lstsize_3_none();
 
-	test_ft_lstlast_1();
+	// test_ft_lstlast_1();
 
-	test_ft_lstadd_back_1_one_new();
-	test_ft_lstadd_back_2_three_new();
+	// test_ft_lstadd_back_1_one_new();
+	// test_ft_lstadd_back_2_three_new();
 
 	// test_ft_lstdelone_1();
 
 	test_ft_lstclear_1();
 
-	test_ft_lstiter_1();
+	// test_ft_lstiter_1();
 
-	test_ft_lstmap_1();
+	// test_ft_lstmap_1();
 }

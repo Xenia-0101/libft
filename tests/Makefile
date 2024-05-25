@@ -42,7 +42,7 @@ tests_ft_striteri.c \
 tests_ft_putchar_fd.c \
 tests_ft_putstr_fd.c \
 tests_ft_putnbr_fd.c \
-tests_ft_lstnew_bonus.c \
+tests_ft_bonus.c \
 tests_ft_calloc.c \
 
 OBJS = ${SRCS:.c=.o}

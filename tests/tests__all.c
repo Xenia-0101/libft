@@ -35,6 +35,6 @@ void tests__all(void) {
 	tests_ft_putchar_fd();
 	tests_ft_putstr_fd();
 	tests_ft_putnbr_fd();
-	tests_ft_lstnew_bonus();
+	tests_ft_bonus();
 	tests_ft_calloc();
 }

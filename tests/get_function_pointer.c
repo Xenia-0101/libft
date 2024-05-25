@@ -45,7 +45,7 @@ FunctionMapping functions[] = {
 	{"ft_putchar_fd", tests_ft_putchar_fd},
 	{"ft_putstr_fd", tests_ft_putstr_fd},
 	{"ft_putnbr_fd", tests_ft_putnbr_fd},
-	{"ft_lstnew", tests_ft_lstnew_bonus},
+	{"bonus", tests_ft_bonus},
 	{"ft_calloc", tests_ft_calloc},
 };
 
