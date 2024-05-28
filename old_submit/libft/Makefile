@@ -1,5 +1,5 @@
 NAME = libft.a
-CC = gcc
+CC = cc
 CCFLAGS = -Wall -Werror -Wextra
 RM = rm -f
 LIBC = ar rc

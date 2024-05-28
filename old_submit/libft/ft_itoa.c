@@ -64,9 +64,9 @@ char	*ft_itoa(int n)
 	char	*res;
 
 	if (n == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	else if (n == -2147483648)
-		return ("-2147483648");
+		return (ft_strdup("-2147483648"));
 	digits = count_units(n);
 	if (n < 0)
 	{
