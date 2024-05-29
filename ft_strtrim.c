@@ -48,7 +48,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t		end;
 
 	if (!s1 || !set)
-		return (ft_calloc(0, 0));
+		return (NULL);
 	start = 0;
 	while (char_in_set(s1[start], set))
 		start++;

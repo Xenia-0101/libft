@@ -57,6 +57,6 @@ re: fclean all
 bonus: ${OBJS_BONUS}
 	${LIBC} ${NAME} ${OBJS_BONUS}
 
-# so:
-# 	$(CC) -nostartfiles -fPIC $(CCFLAGS) $(SRCS)
-# 	gcc -nostartfiles -shared -o libft.so $(OBJS)
+so:
+	$(CC) -nostartfiles -fPIC $(CCFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)

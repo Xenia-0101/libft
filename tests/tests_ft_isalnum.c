@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   tests_ft_isalnum.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 18:44:29 by xvislock          #+#    #+#             */
-/*   Updated: 2024/05/22 18:44:29 by xvislock         ###   ########.fr       */
+/*   Created: 2024/04/11 09:36:02 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/11 09:36:02 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	The bzero() function erases the data in the n bytes of the memory
-	starting at the location pointed to by s, by writing zeros
-	(bytes containing '\0') to that area.
-*/
+#include "tests.h"
+#include "../ft_isalnum.c"
 
-#include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
+void test_isalnum_one(char input)
 {
-	char	*temp;
+	printf("input:\t>>%c<<\n\texp:\t>>%d<<\n\tres:\t>>%d<<\n", input, isalnum(input), ft_isalnum(input));
+}
 
-	temp = (char *)s;
-	while (n > 0)
-	{
-		n--;
-		temp[n] = '\0';
-	}
+void tests_ft_isalnum(void)
+{
+	test_isalnum_one(' ');
+	test_isalnum_one('\\');
+	test_isalnum_one('/');
+	test_isalnum_one('9');
+	test_isalnum_one('A');
+	test_isalnum_one('z');
+	test_isalnum_one(9);
+
 }

@@ -30,22 +30,22 @@
 
 #include "libft.h"
 
-void	free_arr(char **res, size_t count)
-{
-	size_t	i;
+// void	free_arr(char **res, size_t count)
+// {
+// 	size_t	i;
 
-	while (count-- > 0)
-	{
-		i = 0;
-		while (*(res[count] + i))
-		{
-			*(res[count] + i) = '\0';
-			i++;
-		}
-		free(res[count]);
-	}
-	free(res);
-}
+// 	while (count-- > 0)
+// 	{
+// 		i = 0;
+// 		while (*(res[count] + i))
+// 		{
+// 			*(res[count] + i) = '\0';
+// 			i++;
+// 		}
+// 		free(res[count]);
+// 	}
+// 	free(res);
+// }
 
 static int	count_words(const char *s, char c)
 {
@@ -99,16 +99,16 @@ char	**ft_split(char const *s, char c)
 	int		word_count;
 	char	**res;
 
-	if (!*s)
+	if (!s)
 	{
-		return (ft_calloc(1, sizeof (char *)));
+		return (NULL);
 	}
 	word_count = count_words(s, c);
 	if (word_count == -1)
 	{
 		return (ft_calloc(1, sizeof (char *)));
 	}
-	res = ft_calloc(sizeof (char *), word_count + 1);
+	res = ft_calloc(word_count + 1, sizeof (char *));
 	if (!res)
 		return (NULL);
 	ft_split_arr(res, s, c, word_count);

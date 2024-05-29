@@ -32,12 +32,10 @@ int	ft_lstsize(t_list *lst)
 	t_list	*t_lst;
 
 	count = 0;
-	if (!lst || !lst->content)
+	if (!lst)
 		return (count);
-	else
-		count++;
 	t_lst = lst;
-	while (t_lst->next)
+	while (t_lst)
 	{
 		count++;
 		t_lst = t_lst->next;

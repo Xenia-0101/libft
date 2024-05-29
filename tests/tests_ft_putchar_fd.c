@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   tests_ft_putchar_fd.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 18:44:29 by xvislock          #+#    #+#             */
-/*   Updated: 2024/05/22 18:44:29 by xvislock         ###   ########.fr       */
+/*   Created: 2024/04/23 18:05:45 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/23 18:05:45 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	The bzero() function erases the data in the n bytes of the memory
-	starting at the location pointed to by s, by writing zeros
-	(bytes containing '\0') to that area.
-*/
+#include "tests.h"
+#include "../ft_putchar_fd.c"
 
-#include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
+void	tests_ft_putchar_fd(void)
 {
-	char	*temp;
-
-	temp = (char *)s;
-	while (n > 0)
+	char *text_to_write = "          ^\n       _(   )_\n      ( `\\ /' )\n        _)^(_\n          V\n";
+	while (*text_to_write)
 	{
-		n--;
-		temp[n] = '\0';
+		ft_putchar_fd(*text_to_write, 1);
+		text_to_write++;
 	}
 }

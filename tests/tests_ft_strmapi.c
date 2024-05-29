@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   tests_ft_strmapi.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 18:44:29 by xvislock          #+#    #+#             */
-/*   Updated: 2024/05/22 18:44:29 by xvislock         ###   ########.fr       */
+/*   Created: 2024/04/22 19:12:17 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/22 19:12:17 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	The bzero() function erases the data in the n bytes of the memory
-	starting at the location pointed to by s, by writing zeros
-	(bytes containing '\0') to that area.
-*/
+#include "tests.h"
+#include "../ft_strmapi.c"
 
-#include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
+static char make_uppercase(unsigned int i, char c)
 {
-	char	*temp;
+	printf("%d\n", i);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
 
-	temp = (char *)s;
-	while (n > 0)
-	{
-		n--;
-		temp[n] = '\0';
-	}
+void	tests_ft_strmapi(void)
+{
+	const char *s = "Hello :)";
+	char *new_s = ft_strmapi(s, make_uppercase);
+	printf("%s\n", new_s);
+
 }

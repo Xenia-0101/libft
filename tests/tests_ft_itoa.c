@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   tests_ft_itoa.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xvislock <xvislock@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/22 18:44:29 by xvislock          #+#    #+#             */
-/*   Updated: 2024/05/22 18:44:29 by xvislock         ###   ########.fr       */
+/*   Created: 2024/04/21 13:27:32 by xvislock          #+#    #+#             */
+/*   Updated: 2024/04/21 13:27:32 by xvislock         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	The bzero() function erases the data in the n bytes of the memory
-	starting at the location pointed to by s, by writing zeros
-	(bytes containing '\0') to that area.
-*/
+#include "tests.h"
+#include "../ft_itoa.c"
+#include "../ft_strdup.c"
 
-#include "libft.h"
-
-void	ft_bzero(void *s, size_t n)
+void	tests_ft_itoa(void)
 {
-	char	*temp;
-
-	temp = (char *)s;
-	while (n > 0)
-	{
-		n--;
-		temp[n] = '\0';
-	}
+	printf("285:\t%s\n", ft_itoa(285));
+	printf("-285:\t%s\n", ft_itoa(-285));
+	printf("0:\t%s\n", ft_itoa(0));
+	printf("-2147483648:\t%s\n", ft_itoa(-2147483648));
 }

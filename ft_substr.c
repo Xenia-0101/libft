@@ -40,6 +40,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 
+	if (!s)
+		return (NULL);
 	if (start + 1 == 0)
 		return (ft_calloc(0, 0));
 	if (len == 0 || ft_strlen((char *)s) < (int)start + 1)

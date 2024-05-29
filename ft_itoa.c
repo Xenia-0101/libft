@@ -29,84 +29,46 @@
 
 #include "libft.h"
 
-static void	count_units(int num, int *units)
+static int	count_units(int num)
 {
+	int	count;
+
+	count = 0;
+	if (num < 0)
+		num *= -1;
 	while (num > 0)
 	{
 		num /= 10;
-		(*units)++;
+		count++;
 	}
-}
-
-static char	*itoa_min_int(void)
-{
-	char	*res;
-
-	res = ft_calloc(12, sizeof (char));
-	if (!res)
-		return (NULL);
-	res[0] = '-';
-	res[1] = '2';
-	res[2] = '1';
-	res[3] = '4';
-	res[4] = '7';
-	res[5] = '4';
-	res[6] = '8';
-	res[7] = '3';
-	res[8] = '6';
-	res[9] = '4';
-	res[10] = '8';
-	return (res);
-}
-
-static char	*itoa_zero(void)
-{
-	char	*res;
-
-	res = ft_calloc(2, sizeof (char));
-	if (!res)
-		return (NULL);
-	res[0] = '0';
-	return (res);
-}
-
-static void	itoa_num(int num, int units, char **res)
-{
-	while (num > 0)
-	{
-		res[0][units - 1] = num % 10 + '0';
-		num /= 10;
-		units--;
-	}
-	if (units)
-	{
-		res[0][0] = '-';
-	}
+	return (count);
 }
 
 char	*ft_itoa(int n)
 {
-	int		units;
+	int		digits;
 	char	*res;
 
 	if (n == 0)
-	{
-		return (itoa_zero());
-	}
-	if (n == -2147483648)
-	{
-		return (itoa_min_int());
-	}
-	units = 0;
+		return (ft_strdup("0"));
+	else if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	digits = count_units(n);
 	if (n < 0)
 	{
-		units++;
+		digits++;
 		n *= -1;
 	}
-	count_units(n, &units);
-	res = ft_calloc(units + 1, sizeof (char));
+	res = ft_calloc(digits + 1, sizeof (char));
 	if (!res)
 		return (NULL);
-	itoa_num(n, units, &res);
+	while (n > 0)
+	{
+		res[digits - 1] = (n % 10) + '0';
+		n /= 10;
+		digits--;
+	}
+	if (digits)
+		res[digits - 1] = '-';
 	return (res);
 }
