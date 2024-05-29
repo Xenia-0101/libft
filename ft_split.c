@@ -100,9 +100,9 @@ char	**ft_split(char const *s, char c)
 	char	**res;
 
 	if (!s)
-	{
 		return (NULL);
-	}
+	if (!*s)
+		return (ft_calloc(1, sizeof (char *)));
 	word_count = count_words(s, c);
 	if (word_count == -1)
 	{
